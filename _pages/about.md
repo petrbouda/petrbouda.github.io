@@ -2,7 +2,6 @@
 layout: page
 title: Mediumish Template for Jekyll
 permalink: /about
-comments: true
 ---
 
 <div class="row justify-content-between">
@@ -131,7 +130,6 @@ featured: true
 <pre><code>---
 layout: page
 title: Mediumish Template for Jekyll
-comments: true
 ---
 </code></pre>
 
