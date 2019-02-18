@@ -21,20 +21,17 @@
 <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet">
     
 <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
-    
+
+    <style>
+        .listfeaturedtag:hover .thumbnail {
+            -moz-transform: scale(1.2);
+            -o-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2)
+        }
+    </style>
 </head>
-    
-{% if jekyll.environment == 'production' %}    
-<!-- change your GA id in _config.yml -->
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', '{{site.google_analytics}}', 'auto');
-ga('send', 'pageview');
-</script>
-{% endif %}
     
 {% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
 <body class="{{layout}}">
@@ -44,14 +41,14 @@ ga('send', 'pageview');
 ================================================== -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
     
-    <div class="container pr-0">    
-    
-    <!-- Begin Logo -->
-    <a class="navbar-brand mainheading" href="{{ site.baseurl }}/">
-        <h1 class="sitetitle">{{ site.name }}</h1>
-<!--    <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">-->
-    </a>
-    <!-- End Logo -->
+    <div class="container pr-0">
+
+    <div style="width: 250px">
+        <a class="navbar-brand" href="{{ site.baseurl }}">
+            <img src="{{ site.baseurl }}/assets/images/pbouda.png"/>
+        </a>
+        <span style="padding-left: 30px; font-size: 12px; font-weight: bold;">{{ site.description }}</span>
+    </div>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -83,10 +80,13 @@ ga('send', 'pageview');
 
         <span style="width: 30px"></span>
 
-        <img src="{{ site.baseurl }}/assets/images/github.png" height="40px" />
+        <a href="https://github.com/petrbouda">
+            <img src="{{ site.baseurl }}/assets/images/github.png" height="40px" />
+        </a>
         <span style="width: 10px"></span>
-        <img src="{{ site.baseurl }}/assets/images/linkedin.png" height="40px" />
-
+        <a href="https://www.linkedin.com/in/petr-bouda/">
+            <img src="{{ site.baseurl }}/assets/images/linkedin.png" height="40px" />
+        </a>
 
         <!-- End Menu -->
 
@@ -99,17 +99,10 @@ ga('send', 'pageview');
 <div class="site-content">   
     
 <div class="container">
-    
-<!-- Site Title
-================================================== -->
-<div style="height: 60px" >
-<!--    <h1 class="sitetitle">{{ site.name }}</h1>-->
-<!--    <p class="lead">-->
-<!--         {{ site.description }}-->
-<!--    </p>-->
-</div>
 
-
+    <!-- Empty Space
+    ================================================== -->
+    <div style="height: 40px"></div>
 
 <!-- Content
 ================================================== --> 

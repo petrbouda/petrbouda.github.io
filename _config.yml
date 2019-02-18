@@ -1,8 +1,8 @@
 # Site
 name: "Petr Bouda"
 title: "Petr Bouda"
-description: "Java/JVM Enthusiast"
-meta_description: "Java/JVM Enthusiast"
+description: "Java/JVM Enthusiast and Speaker"
+meta_description: "Java/JVM Enthusiast and Speaker"
 logo: 'assets/images/logo.png'
 baseurl:
 include: ["_pages"]

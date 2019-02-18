@@ -4,9 +4,6 @@ Copyright: Sal, WowThemes.net, https://www.wowthemes.net
 Version: 1.0.24
 License: https://www.wowthemes.net/freebies-license/ 
 */
- .mainheading {
-     padding:1rem 0rem;
-}
  a {
      color:#00ab6b;
      transition:all 0.2s;
@@ -88,7 +85,7 @@ License: https://www.wowthemes.net/freebies-license/
      transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
  .listfeaturedtag .wrapthumbnail {
-     height:290px;
+     height:250px;
      flex:0 0 auto;
      height: 100%;
 }
@@ -100,10 +97,12 @@ License: https://www.wowthemes.net/freebies-license/
      border: 0;
 }
  .listfeaturedtag .thumbnail {
-     background-size:cover;
+     background-size: 80%;
+     background-repeat: no-repeat;
+     background-position: center;
      height:100%;
      display:block;
-     background-position:38% 22% !important;
+     /*background-position:38% 22% !important;*/
      background-origin:border-box!important;
      border-top-left-radius: .25rem;
      border-bottom-left-radius: .25rem;
@@ -125,13 +124,7 @@ License: https://www.wowthemes.net/freebies-license/
  .wrapfooter {
      font-size:12px;
 }
- .author-thumb {
-     width:40px;
-     height:40px;
-     float:left;
-     margin-right:13px;
-     border-radius:100%;
-}
+
  .post-top-meta {
      margin-bottom:2rem;
 }

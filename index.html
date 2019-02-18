@@ -3,13 +3,11 @@ layout: default
 title: Home
 ---
 
-{% if page.url == "/" %}
-
 <!-- Featured
 ================================================== -->
 <section class="featured-posts">
     <div class="section-title">
-        <h2><span>Featured</span></h2>
+        <h2><span>Courses</span></h2>
     </div>
     <div class="row">
         
@@ -26,28 +24,26 @@ title: Home
     </div>
 </section>
 
-{% endif %}
-
 <!-- Posts IndexWhat is Jekyll
 ================================================== -->
-<section class="recent-posts">
-    
+<section class="recent-posts" style="display: none">
+
     <div class="section-title">
-        
+
         <h2><span>Kurzy</span></h2>
-        
+
     </div>
-    
+
     <div class="row listrecent">
 
         {% for post in paginator.posts %}
 
-               {% include postbox.html %}          
+               {% include postbox.html %}
 
         {% endfor %}
-        
+
     </div>
-    
+
 </section>
 
 <div class="pointerup"><i class="fa fa-caret-up"></i></div>

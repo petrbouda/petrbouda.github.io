@@ -1,9 +1,7 @@
 ---
 layout: post
-title:  "What is Jekyll"
-author: john
-categories: [ Jekyll, tutorial ]
-image: assets/images/11.jpg
+title: "Modularity in Java"
+image: assets/images/modularity.png
 featured: true
 hidden: true
 ---
