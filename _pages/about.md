@@ -42,9 +42,6 @@ permalink: /about
 
 
 <ul>
-<li>Disqus Comments</li>
-
-<li>Google Analaytics</li>
 
 <li>Mailchimp Integration</li></ul>
 </li>

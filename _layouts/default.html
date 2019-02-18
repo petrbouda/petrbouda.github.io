@@ -47,22 +47,22 @@ ga('send', 'pageview');
     <div class="container pr-0">    
     
     <!-- Begin Logo -->
-    <a class="navbar-brand" href="{{ site.baseurl }}/">
-    <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">
+    <a class="navbar-brand mainheading" href="{{ site.baseurl }}/">
+        <h1 class="sitetitle">{{ site.name }}</h1>
+<!--    <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">-->
     </a>
     <!-- End Logo -->
-  
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
-    
-    
+
     <div class="collapse navbar-collapse" id="navbarMediumish">
-       
+
         <!-- Begin Menu -->
-        
+
             <ul class="navbar-nav ml-auto">
-                
+
                 {% if page.url == "/" %}
                 <li class="nav-item active">
                 {% else %}
@@ -79,12 +79,15 @@ ga('send', 'pageview');
                 <a class="nav-link" href="{{ site.baseurl }}/about">About</a>
                 </li>
 
-                {% include search-lunr.html %}
-                
-            </ul>		
-        
-        
-  
+            </ul>
+
+        <span style="width: 30px"></span>
+
+        <img src="{{ site.baseurl }}/assets/images/github.png" height="40px" />
+        <span style="width: 10px"></span>
+        <img src="{{ site.baseurl }}/assets/images/linkedin.png" height="40px" />
+
+
         <!-- End Menu -->
 
     </div>
@@ -93,22 +96,21 @@ ga('send', 'pageview');
 </nav>
 <!-- End Navigation
 ================================================== -->
-    
 <div class="site-content">   
     
 <div class="container">
     
 <!-- Site Title
 ================================================== -->
-<div class="mainheading">
-    <h1 class="sitetitle">{{ site.name }}</h1>
-    <p class="lead">
-         {{ site.description }}
-    </p>
+<div style="height: 60px" >
+<!--    <h1 class="sitetitle">{{ site.name }}</h1>-->
+<!--    <p class="lead">-->
+<!--         {{ site.description }}-->
+<!--    </p>-->
 </div>
 
-    
-    
+
+
 <!-- Content
 ================================================== --> 
 <div class="main-content">
@@ -129,8 +131,6 @@ ga('send', 'pageview');
 <script src="{{ site.baseurl }}/assets/js/mediumish.js"></script>
 
 <script src="{{ site.baseurl }}/assets/js/ie10-viewport-bug-workaround.js"></script> 
-    
-<script id="dsq-count-scr" src="//{{site.disqus}}.disqus.com/count.js"></script>
-    
+
 </body>
 </html>
