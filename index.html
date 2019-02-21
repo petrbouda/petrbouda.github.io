@@ -23,7 +23,16 @@
 
   <style>
     .zoom:hover {
-      transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+      transform: scale(1.1);
+    }
+
+    .resume-content {
+      color: #0b2e13 !important;
+    }
+
+    .resume-content:hover {
+      text-decoration: none;
+      color: #824027 !important;
     }
   </style>
 </head>
@@ -81,20 +90,18 @@ document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.26.3
 
   <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="courses">
     <div class="w-100">
-<!--      <h2 class="mb-5">Courses</h2>-->
-
       <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-        <div class="resume-content" style="padding-right: 20px; width: 50%">
+        <a class="resume-content js-scroll-trigger" style="display: block; padding-right: 20px; width: 50%" href="#dockerjava">
           <img width="90px" style="float: left; margin-right: 15px;" src="img/docker-java.png">
-          <h3 class="mb-0">Docker & Java Synergy</h3>
+          <h3 class="mb-0 resume-title">Docker & Java Synergy</h3>
           <div class="subheading mb-3">1 day - in-house presentation</div>
           <p style="text-align: justify">Bring to the table win-win survival strategies to ensure proactive domination.
             At the end of the day, going forward, a new normal that has evolved from generation X is on the runway
             heading towards a streamlined cloud solution. User generated content in real-time will have multiple
             touchpoints for offshoring.</p>
-        </div>
+        </a>
 
-        <div class="resume-content" style="padding-left: 20px; width: 50%">
+        <a class="resume-content js-scroll-trigger" style="display: block; padding-left: 20px; width: 50%" href="#dockerjava">
           <img width="100px" style="float: left;" src="img/elk.png">
           <h3 class="mb-0">Logging & Monitoring</h3>
           <div class="subheading mb-3">1 day - in-house presentation</div>
@@ -102,20 +109,20 @@ document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.26.3
             At the end of the day, going forward, a new normal that has evolved from generation X is on the runway
             heading towards a streamlined cloud solution. User generated content in real-time will have multiple
             touchpoints for offshoring.</p>
-        </div>
+        </a>
       </div>
 
       <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-        <div class="resume-content" style="padding-right: 20px; width: 50%">
+        <a class="resume-content js-scroll-trigger" style="display: block; padding-right: 20px; width: 50%" href="#dockerjava">
           <img width="100px" style="float: left" src="img/jvm.png">
           <h3 class="mb-0">Advanced JVM</h3>
           <div class="subheading mb-3">1 day - in-house presentation</div>
           <p style="text-align: justify">Capitalize on low hanging fruit to identify a ballpark value added activity to
             beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion
             along the information highway will close the loop on focusing solely on the bottom line.</p>
-        </div>
+        </a>
 
-        <div class="resume-content" style="padding-left: 20px; width: 50%">
+        <a class="resume-content js-scroll-trigger" style="display: block; padding-left: 20px; width: 50%" href="#dockerjava">
           <img width="100px" style="float: left" src="img/modularity.png">
           <h3 class="mb-0">Java Modularity</h3>
           <div class="subheading mb-3">1 day - in-house presentation</div>
@@ -123,18 +130,18 @@ document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.26.3
             a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your
             eye on the ball while performing a deep dive on the start-up mentality to derive convergence on
             cross-platform integration.</p>
-        </div>
+        </a>
       </div>
 
       <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-        <div class="resume-content" style="padding-right: 20px; width: 50%">
+        <a class="resume-content js-scroll-trigger" style="display: block; padding-right: 20px; width: 50%" href="#dockerjava">
           <img width="100px" style="float: left" src="img/gc.png">
           <h3 class="mb-0">JVM Garbage Collector</h3>
           <div class="subheading mb-3">1 day - in-house presentation</div>
           <p style="text-align: justify">Collaboratively administrate empowered markets via plug-and-play networks.
             Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed
             convergence without revolutionary ROI.</p>
-        </div>
+        </a>
       </div>
     </div>
 
@@ -159,6 +166,60 @@ document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.26.3
         <a style="padding-left: 10px" href="https://www.linkedin.com/in/petr-bouda/"><img width="70px" src="img/github-large.png"/></a>
       </div>
     </div>
+  </section>
+
+  <hr class="m-0">
+
+  <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="dockerjava">
+    <div class="w-100">
+      <h2 class="mb-5">Docker & Java Synergy</h2>
+
+      <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+        <div class="resume-content">
+          <h3 class="mb-0">Freelancer</h3>
+          <!--          <div class="subheading mb-3">Intelitec Solutions</div>-->
+          <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+        </div>
+        <div class="resume-date text-md-right">
+          <span class="text-primary">March 2013 - Present</span>
+        </div>
+      </div>
+
+      <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+        <div class="resume-content">
+          <h3 class="mb-0">Software Developer</h3>
+          <div class="subheading mb-3">eBay Classifieds Group</div>
+          <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
+        </div>
+        <div class="resume-date text-md-right">
+          <span class="text-primary">December 2011 - March 2013</span>
+        </div>
+      </div>
+
+      <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+        <div class="resume-content">
+          <h3 class="mb-0">Software Developer</h3>
+          <div class="subheading mb-3">Oracle</div>
+          <p>Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.</p>
+        </div>
+        <div class="resume-date text-md-right">
+          <span class="text-primary">July 2010 - December 2011</span>
+        </div>
+      </div>
+
+      <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
+        <div class="resume-content">
+          <h3 class="mb-0">Junior Software Developer</h3>
+          <div class="subheading mb-3">T-Mobile</div>
+          <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
+        </div>
+        <div class="resume-date text-md-right">
+          <span class="text-primary">September 2008 - June 2010</span>
+        </div>
+      </div>
+
+    </div>
+
   </section>
 
   <hr class="m-0">
