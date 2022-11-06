@@ -1,13 +1,3 @@
-# Java/JVM Pages and Notes
-
-<div style="font-size: 35px; color: grey">
-    <a href="https://github.com/petrbouda" target="_blank"><img style="width:40px" src="../img/social/github.png" /></a>
-    <a href="https://www.linkedin.com/in/petr-bouda" target="_blank"><img style="width:40px" src="../img/social/linkedin.png" /></a>
-    <a href="https://twitter.com/p_bouda" target="_blank"><img style="width:40px" src="../img/social/twitter.png" /></a>
-</div>
-
----
-
 ## <a href="?native-memory-tracking">Native-Memory-Tracking in detail</a>
 
 From time to time, we run into a memory problem that is not related to Java Heap but Native Memory. 
