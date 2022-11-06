@@ -1,9 +1,10 @@
 # Java/JVM Pages and Notes
 
-### Petr Bouda 
-<a href="https://github.com/petrbouda" target="_blank"><img style="width:40px" src="../img/social/github.png" /></a>
-<a href="https://www.linkedin.com/in/petr-bouda" target="_blank"><img style="width:40px" src="../img/social/linkedin.png" /></a>
-<a href="https://twitter.com/p_bouda" target="_blank"><img style="width:40px" src="../img/social/twitter.png" /></a>
+<div style="font-size: 35px; color: grey">
+    <a href="https://github.com/petrbouda" target="_blank"><img style="width:40px" src="../img/social/github.png" /></a>
+    <a href="https://www.linkedin.com/in/petr-bouda" target="_blank"><img style="width:40px" src="../img/social/linkedin.png" /></a>
+    <a href="https://twitter.com/p_bouda" target="_blank"><img style="width:40px" src="../img/social/twitter.png" /></a>
+</div>
 
 ---
 
