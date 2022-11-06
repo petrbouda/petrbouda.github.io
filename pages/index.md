@@ -1,9 +1,9 @@
 # Java/JVM Pages and Notes
 
 ### Petr Bouda 
-- https://twitter.com/p_bouda
-- https://www.linkedin.com/in/petr-bouda/
-- https://github.com/petrbouda
+<a href="https://github.com/petrbouda" target="_blank"><img style="width:40px" src="../img/social/github.png" /></a>
+<a href="https://www.linkedin.com/in/petr-bouda" target="_blank"><img style="width:40px" src="../img/social/linkedin.png" /></a>
+<a href="https://twitter.com/p_bouda" target="_blank"><img style="width:40px" src="../img/social/twitter.png" /></a>
 
 ---
 
@@ -16,7 +16,7 @@ any problem with Java Heap size (exported via JMX) and start blaming our contain
 to do any inconvenient operations with our containers :). The real problem can be hidden 
 a bit deeper — in Native Memory.
 
-## <a href="?memory-in-jvm-process">What takes memory inside JVM Process?</a>
+## <a href="?memory-in-jvm-process">What takes memory inside a JVM Process?</a>
 
 The JVM process contains several parts where the memory can be consumed. It even contains
 multiple custom allocators that take care of some allocated chunk of memory and these

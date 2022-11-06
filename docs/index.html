@@ -10,11 +10,9 @@
     <body>
         <h1 id="javajvm-pages-and-notes">Java/JVM Pages and Notes</h1>
 <h3 id="petr-bouda">Petr Bouda</h3>
-<ul>
-<li><a href="https://twitter.com/p_bouda">https://twitter.com/p_bouda</a></li>
-<li><a href="https://www.linkedin.com/in/petr-bouda/">https://www.linkedin.com/in/petr-bouda/</a></li>
-<li><a href="https://github.com/petrbouda">https://github.com/petrbouda</a></li>
-</ul>
+<p><a href="https://github.com/petrbouda" target="_blank"><img style="width:40px" src="../img/social/github.png" /></a>
+<a href="https://www.linkedin.com/in/petr-bouda" target="_blank"><img style="width:40px" src="../img/social/linkedin.png" /></a>
+<a href="https://twitter.com/p_bouda" target="_blank"><img style="width:40px" src="../img/social/twitter.png" /></a></p>
 <hr>
 <h2 id="a-hrefnative-memory-trackingnative-memory-tracking-in-a-detaila"><a href="native-memory-tracking.html">Native-Memory-Tracking in a detail</a></h2>
 <p>From time to time, we run into a memory problem that is not related to Java Heap but Native Memory. 
@@ -23,7 +21,7 @@ We look at Prometheus/Grafana to check the reason behind this issue. However, we
 any problem with Java Heap size (exported via JMX) and start blaming our container scheduler 
 to do any inconvenient operations with our containers :). The real problem can be hidden 
 a bit deeper — in Native Memory.</p>
-<h2 id="a-hrefmemory-in-jvm-processwhat-takes-memory-inside-jvm-processa"><a href="memory-in-jvm-process.html">What takes memory inside JVM Process?</a></h2>
+<h2 id="a-hrefmemory-in-jvm-processwhat-takes-memory-inside-a-jvm-processa"><a href="memory-in-jvm-process.html">What takes memory inside a JVM Process?</a></h2>
 <p>The JVM process contains several parts where the memory can be consumed. It even contains
 multiple custom allocators that take care of some allocated chunk of memory and these
 allocators are dedicated to one specific reason in the JVM Process. Let&#39;s write them down
