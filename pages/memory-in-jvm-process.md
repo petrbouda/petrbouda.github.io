@@ -209,7 +209,8 @@ but still you would like to se if it's everything kinda OK. In this chapter, we'
 information directly from Java, and using Springboot framework and implementing some graphs.
 
 The most used way to get some information is using `Platform MXBeans` (this is also the way used by the 
-majority of frameworks, those I have checked at least) 
+majority of frameworks, those I have checked at least). We can also use `BufferPoolMXBean` to get the 
+information about `java.nio.ByteBuffer.allocateDirect` and `java.nio.MappedByteBuffer`.
 
 ```java
 public class Memory {
@@ -275,4 +276,83 @@ INIT: 288 MB, USED: 3 MB, COMMITTED: 296 MB, MAX: 4944 MB
 G1 Survivor Space
 INIT: 0 MB, USED: 0 MB, COMMITTED: 0 MB, MAX: -1 MB
 ```
+
+## JVM memory pools monitoring in practice
+
+It's time to wrap up all the previous chapters and show how the memory pools can be monitored
+in one of the very popular framework - [Spring Boot](https://spring.io/projects/spring-boot).
+
+I have experience with combination _Spring Boot_ | _Micrometer_ | _Prometheus_ | _Grafana_. According to my opinion,
+Prometheus is not the optimal way for monitoring (because of scraping where is no specific timestamp to a given "event"), 
+but it's good complementary feature if the primary usage of Prometheus is alerting.
+
+Micrometer support for collecting information about JVM Memory Pools is of course based on the `Platform MXBeans`, as we mentioned 
+in the previous chapter. Have a look at the class [io.micrometer.core.instrument.binder.jvm.JvmMemoryMetrics](https://github.com/micrometer-metrics/micrometer/blob/main/micrometer-core/src/main/java/io/micrometer/core/instrument/binder/jvm/JvmMemoryMetrics.java)
+to see the concrete implementation. Micrometer also registers `BufferPoolMXBean` to see usage of _DirectBuffers_ and _MappedBuffers_.
+
+If we start the application and go to the endpoint exposing metrics `/actuator/prometheus`, then we can get something like that.
+
+_(the executed app had SerialGC, therefore, we have a slightly different names of memory pools from G1GC)_
+```text
+# HELP jvm_memory_used_bytes The amount of used memory
+# TYPE jvm_memory_used_bytes gauge
+jvm_memory_used_bytes{area="heap",id="Tenured Gen",} 3.4405656E7
+jvm_memory_used_bytes{area="nonheap",id="CodeHeap 'profiled nmethods'",} 1.9464576E7
+jvm_memory_used_bytes{area="heap",id="Eden Space",} 1.20644032E8
+jvm_memory_used_bytes{area="nonheap",id="Metaspace",} 7.3233248E7
+jvm_memory_used_bytes{area="nonheap",id="CodeHeap 'non-nmethods'",} 1446272.0
+jvm_memory_used_bytes{area="heap",id="Survivor Space",} 2290872.0
+jvm_memory_used_bytes{area="nonheap",id="Compressed Class Space",} 9172008.0
+jvm_memory_used_bytes{area="nonheap",id="CodeHeap 'non-profiled nmethods'",} 1.629888E7
+# HELP jvm_buffer_memory_used_bytes An estimate of the memory that the Java virtual machine is using for this buffer pool
+# TYPE jvm_buffer_memory_used_bytes gauge
+jvm_buffer_memory_used_bytes{id="mapped - 'non-volatile memory'",} 0.0
+jvm_buffer_memory_used_bytes{id="mapped",} 0.0
+jvm_buffer_memory_used_bytes{id="direct",} 3.3759519E7
+# HELP jvm_buffer_count_buffers An estimate of the number of buffers in the pool
+# TYPE jvm_buffer_count_buffers gauge
+jvm_buffer_count_buffers{id="mapped - 'non-volatile memory'",} 0.0
+jvm_buffer_count_buffers{id="mapped",} 0.0
+jvm_buffer_count_buffers{id="direct",} 20.0
+# HELP jvm_memory_max_bytes The maximum amount of memory in bytes that can be used for memory management
+# TYPE jvm_memory_max_bytes gauge
+jvm_memory_max_bytes{area="heap",id="Tenured Gen",} 1.572864E8
+jvm_memory_max_bytes{area="nonheap",id="CodeHeap 'profiled nmethods'",} 1.22912768E8
+jvm_memory_max_bytes{area="heap",id="Eden Space",} 1.6777216E8
+jvm_memory_max_bytes{area="nonheap",id="Metaspace",} -1.0
+jvm_memory_max_bytes{area="nonheap",id="CodeHeap 'non-nmethods'",} 5828608.0
+jvm_memory_max_bytes{area="heap",id="Survivor Space",} 2.097152E7
+jvm_memory_max_bytes{area="nonheap",id="Compressed Class Space",} 1.073741824E9
+jvm_memory_max_bytes{area="nonheap",id="CodeHeap 'non-profiled nmethods'",} 1.22916864E8
+# HELP jvm_buffer_total_capacity_bytes An estimate of the total capacity of the buffers in this pool
+# TYPE jvm_buffer_total_capacity_bytes gauge
+jvm_buffer_total_capacity_bytes{id="mapped - 'non-volatile memory'",} 0.0
+jvm_buffer_total_capacity_bytes{id="mapped",} 0.0
+jvm_buffer_total_capacity_bytes{id="direct",} 3.3759518E7
+# HELP jvm_memory_committed_bytes The amount of memory in bytes that is committed for the Java virtual machine to use
+# TYPE jvm_memory_committed_bytes gauge
+jvm_memory_committed_bytes{area="heap",id="Tenured Gen",} 1.572864E8
+jvm_memory_committed_bytes{area="nonheap",id="CodeHeap 'profiled nmethods'",} 2.3068672E7
+jvm_memory_committed_bytes{area="heap",id="Eden Space",} 1.6777216E8
+jvm_memory_committed_bytes{area="nonheap",id="Metaspace",} 7.3859072E7
+jvm_memory_committed_bytes{area="nonheap",id="CodeHeap 'non-nmethods'",} 2555904.0
+jvm_memory_committed_bytes{area="heap",id="Survivor Space",} 2.097152E7
+jvm_memory_committed_bytes{area="nonheap",id="Compressed Class Space",} 9502720.0
+jvm_memory_committed_bytes{area="nonheap",id="CodeHeap 'non-profiled nmethods'",} 1.6384E7
+```
+
+These metrics are regularly scraped and stored in Prometheus, and we can configure some useful graphs then.
+GrafanaLabs contains a template for Spring Boot applications, it's very recommended to start with this one and adjust it according to your needs
+https://grafana.com/grafana/dashboards/6756-spring-boot-statistics/
+
+#### Heap Memory Pools
+
+![Heap Memory Pools](../img/memory-pools/heap.png)
+
+#### Native/Off-heap Memory Pools
+
+![Off-heap Memory Pools](../img/memory-pools/native.png)
+
+
+
 

@@ -1,5 +1,5 @@
 <div style="overflow: hidden">
-<h1 style="float:left;"><a href="index.html" style="text-decoration: none">Java Virtual Machine</a></h1>
+<h1 style="float:left;"><a href="index.html" style="text-decoration: none">Petr Bouda | <b>Java Virtual Machine</b></a></h1>
 
 <div style="margin: 40px auto 0; float: right; width: 200px; text-align: right; ">
     <a href="https://github.com/petrbouda" target="_blank"><img style="width:40px" src="../img/social/github.png" /></a>

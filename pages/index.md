@@ -1,4 +1,5 @@
 ## <a href="?native-memory-tracking">Native Memory Tracking in detail</a>
+_2022-11-07_
 
 From time to time, we run into a memory problem that is not related to Java Heap but Native Memory. 
 Let's imagine the situation where we have a running container that is restarted once per day. 
@@ -8,6 +9,7 @@ to do any inconvenient operations with our containers :). The real problem can b
 a bit deeper — in Native Memory.
 
 ## <a href="?memory-in-jvm-process">What takes memory inside a JVM Process?</a>
+_2022-11-07_
 
 The JVM process contains several parts where the memory can be consumed. It even contains
 multiple custom allocators that take care of some allocated chunk of memory and these
