@@ -1,4 +1,4 @@
-## <a href="?native-memory-tracking">Native-Memory-Tracking in detail</a>
+## <a href="?native-memory-tracking">Native Memory Tracking in detail</a>
 
 From time to time, we run into a memory problem that is not related to Java Heap but Native Memory. 
 Let's imagine the situation where we have a running container that is restarted once per day. 

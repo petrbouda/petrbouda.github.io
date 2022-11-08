@@ -16,24 +16,74 @@ go deeper in some upcoming articles :).
 
 In general, the memory in process handled by JVM is divided into:
 
-- **Java Heap**
-  - a space where you application allocates the objects
-  - the objects can be allocated even by JNI (a library written in C/C++ and called from the app)
-  - however, it also contains non-application allocations caused by JVM internal stuff 
-  such as Stacks of [VirtualThreads](https://openjdk.org/jeps/425)
+### Java Heap
+- a space where you application allocates the objects
+- the objects can be allocated even by JNI (a library written in C/C++ and called from the app)
+- however, it also contains non-application allocations caused by JVM internal stuff 
+such as Stacks of [VirtualThreads](https://openjdk.org/jeps/425)
 
-- **Native Memory (Off-Heap)**
-  - in general, everything what is outside the Heap is called as a native allocation
-  - the native application can be triggered by `malloc`, and then the memory is placed a managed 
-  by the C-Heap, very likely using some arenas where a chunk of memory is allocated and when the 
-  chunk is freed, then it can be reused for another allocation (the behavior can differ depending on
-  the implementation of `malloc` allocator - default 
-  [GNU Allocator](https://www.gnu.org/software/libc/manual/html_node/The-GNU-Allocator.html), 
-  alternative - [jemalloc](http://jemalloc.net/))
-  - or mapping a bigger chunk of memory using [mmap](https://man7.org/linux/man-pages/man2/mmap.2.html)
-  - JVM in some cases maps a bigger part of Virtual memory and implements its own specialized allocator, 
-  e.g. [Metaspace](https://blogs.sap.com/2021/07/16/jep-387-elastic-metaspace-a-new-classroom-for-the-java-virtual-machine/?s=03)
-  
+### Native Memory (Off-Heap)
+- in general, everything what is outside the Heap is called as a native allocation
+- the native application can be triggered by `malloc`, and then the memory is placed a managed 
+by the C-Heap, very likely using some arenas where a chunk of memory is allocated and when the 
+chunk is freed, then it can be reused for another allocation (the behavior can differ depending on
+the implementation of `malloc` allocator - default 
+[GNU Allocator](https://www.gnu.org/software/libc/manual/html_node/The-GNU-Allocator.html), 
+alternative - [jemalloc](http://jemalloc.net/))
+- or mapping a bigger chunk of memory using [mmap](https://man7.org/linux/man-pages/man2/mmap.2.html)
+- JVM in some cases maps a bigger part of Virtual memory and implements its own specialized allocator, 
+e.g. [Metaspace](https://blogs.sap.com/2021/07/16/jep-387-elastic-metaspace-a-new-classroom-for-the-java-virtual-machine/?s=03)
+
+There are other ways to allocate the off-heap memory directly from Java code:
+
+#### Using Unsafe
+- this is definitely not recommended way of handling off-heap allocation, and it will be forbidden by the module system in Java
+- it was very often used by third-party libraries to allocate a chunk of memory and implement their own specialized allocator, 
+e.g. Off-heap allocator in Netty (if I am not mistaken) to avoid garbage collections
+
+```java
+Field f = Unsafe.class.getDeclaredField("theUnsafe");
+f.setAccessible(true);
+Unsafe unsafe = (Unsafe) f.get(null);
+
+// Allocates 50MB of native memory
+int memoryBlock = 50 * 1024 * 1024;
+long address = unsafe.allocateMemory(memoryBlock);
+```
+
+Native Memory Tracking output:
+
+```text
+Total: reserved=6755091KB +51201KB, committed=477635KB +51201KB
+...
+-                     Other (reserved=51210KB +51200KB, committed=51210KB +51200KB)
+                            (malloc=51210KB +51200KB #3 +1)
+```
+
+#### Direct Buffers
+- a current official way to handle a chunk of the off-heap memory
+- it's automatically discarded and the allocated memory released based on the (Cleaner)[https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/ref/Cleaner.html]
+- the dependence on **Cleaner** can be also the weakness of this Off-heap approach because it's based on Phantom-reference, and it can delay
+de-allocation of the memory chunk until the GC starts Reference Processing phase (varies from one GC algorithm to another)
+
+```java
+// Allocates 50MB of native memory
+int memoryBlock = 50 * 1024 * 1024;
+ByteBuffer directBuf = ByteBuffer.allocateDirect(memoryBlock);
+```
+
+```text
+Total: reserved=6749056KB +51202KB, committed=465708KB +51202KB
+...
+-                     Other (reserved=51210KB +51200KB, committed=51210KB +51200KB)
+                            (malloc=51210KB +51200KB #3 +1)
+```
+
+#### Foreign Function & Memory API
+- [Foreign Function & Memory API](https://openjdk.org/jeps/424) is a part of the [Panama Project](https://openjdk.org/projects/panama/)
+- it's intended to be a replacement for `Unsafe` approach providing good performance and security guarantees, creating a memory layout 
+with "structs" and avoiding manual counting of addresses
+
 ## What part eats up my memory!
 
 Very often, developers watch out for the part which is dedicated to Heap memory. It's very likely 
