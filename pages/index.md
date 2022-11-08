@@ -1,3 +1,18 @@
+## <a href="?how-java-heap-is-represented">How Java Heap is represented by JVM (TBD)</a>
+_2022-11-09_
+
+A short article that digs into JVM internals to uncover how the _Java Heap_ is
+created/handled/represented. It can help to understand of how the heap and OS memory behave
+in some specific cases.
+
+## <a href="?tracking-rss-in-jvm-process">Tracking RSS down in a JVM Process (IN PROGRESS)</a>
+_2022-11-08_
+
+Very quick intro into how RSS in Linux OS works along with JVM. There are multiple places to read
+information about the consumed memory by the process and a developer needs to exactly know
+what these numbers mean to be able to predict the behavior in some constrained environments,
+e.g. Containers. It's a mandatory introduction to following articles dealing with _JVM and Containers_.
+
 ## <a href="?native-memory-tracking">Native Memory Tracking in detail</a>
 _2022-11-07_
 
@@ -9,7 +24,7 @@ to do any inconvenient operations with our containers :). The real problem can b
 a bit deeper — in Native Memory.
 
 ## <a href="?memory-in-jvm-process">What takes memory inside a JVM Process?</a>
-_2022-11-07_
+_2022-11-05_
 
 The JVM process contains several parts where the memory can be consumed. It even contains
 multiple custom allocators that take care of some allocated chunk of memory and these
