@@ -1,42 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Java Virtual Machine</title>
-        <link href="main.css" rel="stylesheet">
-    </head>
-    <body>
-        <script type="module">
-            import {marked} from './lib/marked-es6.js';
-            import {hljs} from './lib/highlight-es6.js';
+---
+layout: default
+image: '/images/01.jpg'
+---
 
-            marked.setOptions({
-                langPrefix: '',
-                highlight: function(code) {
-                    return hljs.highlightAuto(code).value;
-                },
-            });
+{% include section-hero.html %}
 
-            (async function() {
+{% include section-featured.html %}
 
-                // Read url for requested page
-                const page = location.search.split('?')[1];
+{% include section-projects.html %}
 
-                // Try to load pages's markdown, or index if none requested
-                let response = await fetch(`./pages/${page || 'index'}.md`, {method: 'GET'});
+{% include section-testimonials.html %}
 
-                let header = await fetch(`./pages/header.md`, {method: 'GET'});
+{% include section-faq.html %}
 
-                // If not found, fallback to loading index
-                if (!response.ok) response = await fetch(`./pages/index.md`, {method: 'GET'});
+{% include section-blog.html %}
 
-                // Get text from response
-                const text = await response.text();
-                const headerContent = await header.text();
+{% include section-author.html %}
 
-                // Replace this page's content with the converted markdown to html and add the header to all pages
-                document.body.innerHTML = headerContent + marked(text);
-            })();
-        </script>
-    </body>
-</html>
+{% include section-subscribe.html %}
