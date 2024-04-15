@@ -1,11 +1,9 @@
 #-------------------------------
 # Site Settings
-title: Gerous
-description: Gerous is a modern portfolio Jekyll theme
+title: Jeffrey
+description: Jeffrey, the analyst
 logo: "/images/logo.svg" # You can add own logo. For example "/images/logo.svg".
-logo_dark: "/images/logo-dark.svg"
-color_scheme: auto # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the user can choose the light or dark mode themself.
-
+color_scheme: light # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the user can choose the light or dark mode themself.
 
 #-------------------------------
 # Navigation Settings
@@ -40,20 +38,20 @@ cta_button:
 #-------------------------------
 # Author Settings
 author:
-  author_name: "Daryl Mercer"
-  author_avatar: "/images/01-1.jpg"
+  author_name: "Jeffrey, The Analyst"
+  author_avatar: "/images/01.png"
 
 
 #-------------------------------
 # Hero Settings
 hero:
   enable: true
-  hero_title: I'm an expert user experience strategist and mobile developer.
-  hero_description: Leveraging my expertise, I'm here to collaborate with you on crafting design solutions that transcend expectations. Let's embark on a journey of innovation together!
+  hero_title: I'm almost an expert in profiling Java applications.
+  hero_description: Leveraging my expertise, I'm here to collaborate with you on seeking of performance gaps in your Java applications. Let's play and learn together!
 
 # Hero Logos
 hero_logos:
-  enable: true
+  enable: false
 
 hero_logo_image:
   - alt: "Apple Logo"
@@ -81,7 +79,7 @@ hero_logo_image:
 #-------------------------------
 # Slider Featured Settings
 featured:
-  enable: true
+  enable: false
   featured_title: Selected Work
 
 
@@ -89,14 +87,14 @@ featured:
 # Projects Section Settings
 projects:
   enable: true
-  projects_title: Recent Work
+  projects_title: My Capabilities
   projects_description:
 
 
 #-------------------------------
 # Testimonials Section Settings
 testimonials:
-  enable: true
+  enable: false
   testimonials_intro: Don't take my word for it
   testimonials_title: See what our happy clients say...
   testimonials_info: Join over <b>10K+</b> Prefessionals
@@ -159,11 +157,11 @@ blog:
 #-------------------------------
 # Author Section Settings
 author_section:
-  enable: true
+  enable: false
   author_section_title: "Hi there 👋 ! Welcome to my fun zone. I'm Daryl, the playmaker of ideas."
   author_section_description: When I'm not crafting digital wonders, you can catch me sipping on coffee, cruising around on my bike, diving into games, and grooving to some tunes. Let's connect, share stories, and make this digital space our cozy corner. Cheers to good vibes and creative adventures!
-  author_section_image: "/images/01.jpg"
-  author_section_image_alt: Daryl Mercer
+  author_section_image: "/images/01.png"
+  author_section_image_alt: Jeffrey, The Analyst
   author_section_button_text: Let's сonnect!
   author_section_button_link: "/contact/"
 
@@ -197,7 +195,7 @@ social:
 #-------------------------------
 # Newsletter Settings
 mailchimp:
-  enable: true
+  enable: false
   mailchimp_title: Stay inspired weekly 📬 Your friendly dose of tips & insights!
   mailchimp_description: Every Sunday, I deliver actionable tips for enhancing productivity, practical life advice, and top-notch insights gathered from various sources, right to your email inbox.
   mailchimp_identifier: gmail.us21.list-manage.com/subscribe/post?u=8aeb9c31a5c97a3a5f9ff2740&amp;id=0e31fd7793&amp # Add your MailChimp form identifier. For example - gmail.us21.list-manage.com/subscribe/post?u=8aeb9c31a5c97a3a5f9ff2740&amp;id=0e31fd7793&amp
