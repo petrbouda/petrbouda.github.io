@@ -2,7 +2,7 @@
 title: Innovative mobile app interface redefining user experience
 date: 2024-01-13 08:04:35 +0300
 label: Development
-image: '/images/project-3.jpg'
+image: '/images/capability_information.png'
 featured: true
 ---
 The process of creating a user interface starts with in-depth analysis of user needs and competitor research. Understanding user behavioral patterns and preferences plays a crucial role in developing design concepts.
