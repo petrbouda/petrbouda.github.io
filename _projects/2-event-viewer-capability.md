@@ -1,9 +1,9 @@
 ---
-title: Shaping enduring identities through design symphony
-date: 2024-01-13 08:01:35 +0300
-label: Design
-image: '/images/capability_analysis.png'
-featured:
+title: Responsive development optimizing your website for all devices
+date: 2024-01-13 08:05:35 +0300
+label: Event Viewer
+image: '/images/capability_event_viewer.png'
+featured: true
 ---
 The process of creating a user interface starts with in-depth analysis of user needs and competitor research. Understanding user behavioral patterns and preferences plays a crucial role in developing design concepts.
 
@@ -24,8 +24,6 @@ At the heart of successful UX/UI design is empathy. We explore how putting ourse
 </div>
 
 Understanding user behavioral patterns and preferences plays a crucial role in developing design concepts. In this blog, we will explore methods and tools that will help you gather valuable data and transform it into unique design solutions.
-
-## Designing for Multi-Platform Experiences
 
 In a multi-device world, consistency is key. We discuss the challenges and opportunities that arise when designing experiences that seamlessly transition between devices.
 

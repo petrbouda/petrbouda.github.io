@@ -1,13 +1,18 @@
 ---
-title: Innovative mobile app interface redefining user experience
-date: 2024-01-13 08:04:35 +0300
-label: Development
-image: '/images/capability_information.png'
-featured: true
+title: Shaping enduring identities through design symphony
+date: 2024-01-13 08:01:35 +0300
+label: Auto Analysis
+image: '/images/capability_analysis.png'
+featured:
 ---
 The process of creating a user interface starts with in-depth analysis of user needs and competitor research. Understanding user behavioral patterns and preferences plays a crucial role in developing design concepts.
 
 From wireframes to prototypes, logo design to UI/UX, we strive to unravel the mysteries of exceptional design that leaves a lasting impact on users. Let’s craft experiences that inspire and delight, one design at a time.
+
+![iPad](/images/project-example-1.jpg)
+*Photo by [Balázs Kétyi](https://unsplash.com/@balazsketyi) on [Unsplash](https://unsplash.com/)*
+
+At the heart of successful UX/UI design is empathy. We explore how putting ourselves in users’ shoes allows us to create designs that truly resonate with their desires and aspirations.
 
 <div class="gallery-box">
   <div class="gallery">
@@ -17,11 +22,6 @@ From wireframes to prototypes, logo design to UI/UX, we strive to unravel the my
   </div>
   <em>Gallery / <a href="https://unsplash.com/" target="_blank">Unsplash</a></em>
 </div>
-
-At the heart of successful UX/UI design is empathy. We explore how putting ourselves in users’ shoes allows us to create designs that truly resonate with their desires and aspirations.
-
-![iPad](/images/project-example-1.jpg)
-*Photo by [Balázs Kétyi](https://unsplash.com/@balazsketyi) on [Unsplash](https://unsplash.com/)*
 
 Understanding user behavioral patterns and preferences plays a crucial role in developing design concepts. In this blog, we will explore methods and tools that will help you gather valuable data and transform it into unique design solutions.
 
