@@ -15,7 +15,7 @@
       </div>
 
       <div class="row">
-      {% assign sorted = site.projects | sort | reverse %}
+      {% assign sorted = site.projects | sort: 'order' %}
       {% assign displayed_projects = 0 %}
 
       {% for project in sorted %}

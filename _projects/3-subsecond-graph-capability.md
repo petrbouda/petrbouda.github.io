@@ -1,9 +1,10 @@
 ---
-title: Responsive development optimizing your website for all devices
-date: 2024-01-13 08:05:35 +0300
-label: Event Viewer
-image: '/images/capability_event_viewer.png'
-featured: true
+order: 3
+title: Startup Tuning/Comparing with Sub-Second Graphs
+date: 2024-01-14 08:01:35 +0300
+label: Sub-Second Graph
+image: '/images/capability_subsecond.png'
+featured:
 ---
 The process of creating a user interface starts with in-depth analysis of user needs and competitor research. Understanding user behavioral patterns and preferences plays a crucial role in developing design concepts.
 
