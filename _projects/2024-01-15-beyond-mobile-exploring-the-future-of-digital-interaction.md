@@ -2,7 +2,7 @@
 title: Beyond mobile exploring the future of digital interaction
 date: 2024-01-15 08:01:35 +0300
 label: Development
-image: '/images/capability_2.png'
+image: '/images/capability_diff.png'
 #video_embed: https://www.youtube.com/embed/phiMxtqlFIY
 featured:
 ---
