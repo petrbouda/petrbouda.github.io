@@ -2,7 +2,7 @@
 title: Seamless integration of design and development for web apps
 date: 2024-01-14 08:01:35 +0300
 label: Branding
-image: '/images/capability_analysis.png'
+image: '/images/capability_subsecond.png'
 featured:
 ---
 The process of creating a user interface starts with in-depth analysis of user needs and competitor research. Understanding user behavioral patterns and preferences plays a crucial role in developing design concepts.
