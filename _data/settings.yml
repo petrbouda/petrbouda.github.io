@@ -2,7 +2,7 @@
 # Site Settings
 title: Jeffrey
 description: Jeffrey, the analyst
-logo: "/images/logo.svg" # You can add own logo. For example "/images/logo.svg".
+logo: "/images/01.png" # You can add own logo. For example "/images/logo.svg".
 color_scheme: light # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the user can choose the light or dark mode themself.
 
 #-------------------------------
@@ -15,16 +15,16 @@ menu_settings:
       url: "/projects/"
     - title: "Posts"
       url: "/posts/"
-    - title: "Resources"
-      submenu:
-      - url: "/posts/the-psychology-of-mobile-app-colors-influencing-user-perception"
-        title: "News"
-      - url: "/posts/gamifying-the-user-experience-strategies-beyond-mobile-games"
-        title: "Games"
-      - url: "/posts/harmonizing-aesthetics-and-functionality-in-ux-ui-mobile-design"
-        title: "Mobile"
-      - url: "/elements/"
-        title: "Elements"
+#    - title: "Resources"
+#      submenu:
+#      - url: "/posts/the-psychology-of-mobile-app-colors-influencing-user-perception"
+#        title: "News"
+#      - url: "/posts/gamifying-the-user-experience-strategies-beyond-mobile-games"
+#        title: "Games"
+#      - url: "/posts/harmonizing-aesthetics-and-functionality-in-ux-ui-mobile-design"
+#        title: "Mobile"
+#      - url: "/elements/"
+#        title: "Elements"
     - title: "About Me"
       url: "/about/"
 
