@@ -1,7 +1,7 @@
 #-------------------------------
 # Site Settings
 title: Jeffrey
-description: Jeffrey, the analyst
+description: Jeffrey, The JFR analyst
 logo: "/images/01.png" # You can add own logo. For example "/images/logo.svg".
 color_scheme: light # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the user can choose the light or dark mode themself.
 
@@ -38,7 +38,7 @@ cta_button:
 #-------------------------------
 # Author Settings
 author:
-  author_name: "Jeffrey, The Analyst"
+  author_name: "Jeffrey, The JFR Analyst"
   author_avatar: "/images/01.png"
 
 
@@ -161,7 +161,7 @@ author_section:
   author_section_title: "Hi there 👋 ! Welcome to my fun zone. I'm Daryl, the playmaker of ideas."
   author_section_description: When I'm not crafting digital wonders, you can catch me sipping on coffee, cruising around on my bike, diving into games, and grooving to some tunes. Let's connect, share stories, and make this digital space our cozy corner. Cheers to good vibes and creative adventures!
   author_section_image: "/images/01.png"
-  author_section_image_alt: Jeffrey, The Analyst
+  author_section_image_alt: Jeffrey, The JFR Analyst
   author_section_button_text: Let's сonnect!
   author_section_button_link: "/contact/"
 
