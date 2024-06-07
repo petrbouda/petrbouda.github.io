@@ -11,7 +11,7 @@ menu_settings:
   menu_items:
     - title: "Home"
       url: "/"
-    - title: "Projects"
+    - title: "Capabilities"
       url: "/projects/"
     - title: "Posts"
       url: "/posts/"
@@ -26,13 +26,13 @@ menu_settings:
 #      - url: "/elements/"
 #        title: "Elements"
     - title: "About Me"
-      url: "/about/"
+      url: "https://www.linkedin.com/in/petr-bouda/"
 
 # Call to action button
 cta_button:
   enable: true
-  cta_button_link: '/contact/'
-  cta_button_text: Get in touch
+  cta_button_link: 'https://github.com/petrbouda/jeffrey'
+  cta_button_text: GitHub Repository
 
 
 #-------------------------------
@@ -128,7 +128,7 @@ testimonial_items:
 #-------------------------------
 # Faq (Frequently asked questions) Settings
 faq:
-  enable: true
+  enable: false
   faq_title: Frequently asked questions
   faq_intro: Need some answers?
   faq_items:
@@ -149,7 +149,7 @@ faq:
 #-------------------------------
 # Blog Section Settings
 blog:
-  enable: true
+  enable: false
   blog_intro: What’s new?
   blog_title: Latest from blog
 
@@ -174,19 +174,19 @@ footer_menu__settings:
   menu__items:
     - title: 'Home'
       url: '/'
-    - title: 'Projects'
+    - title: 'Capabilities'
       url: '/projects/'
     - title: 'Posts'
       url: '/posts/'
-    - url: '/about/'
+    - url: 'https://www.linkedin.com/in/petr-bouda/'
       title: 'About Me'
 
 # Social Links
 social:
-- {icon: "fa-brands fa-facebook-f", name: "Facebook", link: "https://facebook.com"}
+#- {icon: "fa-brands fa-facebook-f", name: "Facebook", link: "https://facebook.com"}
 - {icon: "fa-brands fa-x-twitter", name: "Twitter", link: "https://twitter.com"}
-- {icon: "fa-brands fa-tiktok", name: "Tiktok", link: "https://www.tiktok.com"}
-- {icon: "fa-brands fa-instagram", name: "Instagram", link: "https://instagram.com"}
+#- {icon: "fa-brands fa-tiktok", name: "Tiktok", link: "https://www.tiktok.com"}
+#- {icon: "fa-brands fa-instagram", name: "Instagram", link: "https://instagram.com"}
 
 # Example of adding a new link to the footer - {icon: "fa-brands fa-youtube", name: "Youtube", link: https://youtube.com"}
 # Other icons can be found at https://fontawesome.com/icons
