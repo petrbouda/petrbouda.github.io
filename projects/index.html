@@ -21,9 +21,11 @@ description: Discover all the main features and use-cases you can solve with me.
     <div class="container__inner">
       <div class="row">
         {% for project in site.projects reversed %}
+        {% unless project.featured == true %}
         <article class="project col col-4 col-d-6 col-t-12">
           <div class="project__content">
-            <a href="{{ project.url }}" class="project__image">
+<!--            <a href="{{ project.url }}" class="project__image">-->
+            <a class="project__image">
               {% if project.image and project.video_embed %}
               <div class="video-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
@@ -38,11 +40,13 @@ description: Discover all the main features and use-cases you can solve with me.
               <div class="project__label">{{ project.label }}</div>
               {% endif %}
               {% if project.title %}
-              <h3 class="project__title"><a class="project__link" href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+<!--              <h3 class="project__title"><a class="project__link" href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>-->
+              <h3 class="project__title"><a class="project__link" >{{ project.title }}</a></h3>
               {% endif %}
             </div>
           </div>
         </article>
+        {% endunless %}
         {% endfor %}
       </div>
     </div>
