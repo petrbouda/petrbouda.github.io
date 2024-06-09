@@ -1,7 +1,7 @@
 /* Post + Page */
 .post__head,
 .page__head {
-  max-width: 780px;
+  max-width: 1500px;
   margin: 60px auto 32px;
 
   @media (max-width: $tablet) {
@@ -170,7 +170,7 @@
 
 .post,
 .page {
-  max-width: 780px;
+  max-width: 1500px;
   margin: 0 auto 48px;
   color: var(--text-color);
 

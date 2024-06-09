@@ -79,7 +79,7 @@ hero_logo_image:
 #-------------------------------
 # Slider Featured Settings
 featured:
-  enable: false
+  enable: true
   featured_title: Selected Work
 
 
@@ -149,7 +149,7 @@ faq:
 #-------------------------------
 # Blog Section Settings
 blog:
-  enable: false
+  enable: true
   blog_intro: What’s new?
   blog_title: Latest from blog
 
