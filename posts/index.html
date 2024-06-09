@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Writing
-description: Gerous blog features productivity, tips, inspiration and strategies for massive profits. Find out how to set up a successful blog or how to make yours even better!
+<!--description: All interesting information related to JVM and Profiling-->
 ---
 
 <div class="container">
@@ -15,7 +15,7 @@ description: Gerous blog features productivity, tips, inspiration and strategies
   </div>
 
   <div class="explore-tags">
-    <h2>Explore:</h2>
+<!--    <h2>Explore:</h2>-->
     <div class="tag-cloud">
       {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
       {% assign tag_words = site_tags | split:',' | sort %}

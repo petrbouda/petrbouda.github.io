@@ -38,7 +38,7 @@ cta_button:
 #-------------------------------
 # Author Settings
 author:
-  author_name: "Jeffrey, The JFR Analyst"
+  author_name: "Jeffrey"
   author_avatar: "/images/01.png"
 
 
@@ -80,7 +80,7 @@ hero_logo_image:
 # Slider Featured Settings
 featured:
   enable: true
-  featured_title: Selected Work
+#  featured_title: Selected Work
 
 
 #-------------------------------
