@@ -3,7 +3,7 @@ layout: page
 title: About Me
 description: I am an expert user experience strategist and mobile developer, driven by a relentless pursuit of innovation and excellence. My journey in the tech world has been shaped by a commitment to creating solutions that not only meet but exceed user expectations.
 permalink: /about/
-image: '/images/01.png'
+image: '/images/01.jpg'
 ---
 As a user experience strategist, I specialize in understanding the intricacies of user behavior and translating them into intuitive and enjoyable digital interfaces. My approach is rooted in empathy, ensuring that every design decision considers the end-user's perspective.
 
