@@ -1,9 +1,9 @@
 ---
 order: 1
-title: Generate a Recording
+title: How to Start it UP
 #date: 2024-01-16 08:01:35 +0300
 #label: Flamegraphs
-image: '/images/featured/generate_recording.jpg'
+image: '/images/featured/start.jpg'
 featured: true
 ---
 The process of creating a user interface starts with in-depth analysis of user needs and competitor research. Understanding user behavioral patterns and preferences plays a crucial role in developing design concepts.
