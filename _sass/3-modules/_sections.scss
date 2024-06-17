@@ -1,13 +1,13 @@
 /* Sections */
 .section {
-  margin-bottom: 120px;
+  margin-bottom: 60px;
 
   @media (max-width: $tablet) {
-    margin-bottom: 96px;
+    margin-bottom: 48px;
   }
 
   @media (max-width: $mobile) {
-    margin-bottom: 80px;
+    margin-bottom: 40px;
   }
 }
 
