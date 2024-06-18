@@ -60,7 +60,7 @@ docker run -it --network host petrbouda/jeffrey-examples
 - the picture above contains predefined profiles and a drag-and-drop form to load a new recording (it automatically creates a new profile from the recording at this time)
 - choose **jeffery-persons-full-direct-serde** profile 
 
-## Profile Information
+## Profile's Information
 
 After the profile selection, the very first page contains basic information about the application and the profile.
 Since we have JFR's `settings=profile`, the application emitted all available configuration events.
@@ -80,18 +80,23 @@ Be focused on the warnings and always consider whether the warning is relevant f
 
 ## Event Viewer
 
-The next item is **Event Viewer**.
+In **Event Viewer**, we can find all events that are part of the profile. The events are summarized according to a type of the events and categorized using their metadata.
+There are three actions to take:
+- **red button** - all event types containing stacktraces can be visualized using a flamegraph
+- **blue button** - redirects to the description of the event type (e.g. <a href="https://sap.github.io/SapMachine/jfrevents/22.html#executionsample" style="color: blue">https://sap.github.io/SapMachine/jfrevents/22.html#executionsample</a>)
+- **green button** - lists all events with a paginator, search and timeseries graph to pick up an interval and see the distribution of events
+
 
 ![auto-analysis](/images/blog/start/event-viewer.png)
 
+I picked up **Java Thread Park** event:
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/project-example-2.jpg" loading="lazy" alt="Project">
-    <img src="/images/project-example-3.jpg" loading="lazy" alt="Project">
-    <img src="/images/project-example-4.jpg" loading="lazy" alt="Project">
+    <img src="/images/blog/start/viewer-flamegraph.png" loading="lazy" alt="Project">
+    <img src="/images/blog/start/viewer-description.png" loading="lazy" alt="Project">
+    <img src="/images/blog/start/viewer-events.png" loading="lazy" alt="Project">
   </div>
-  <em>Gallery / <a href="https://unsplash.com/" target="_blank">Unsplash</a></em>
 </div>
 
 At the heart of successful UX/UI design is empathy. We explore how putting ourselves in users’ shoes allows us to create designs that truly resonate with their desires and aspirations.
