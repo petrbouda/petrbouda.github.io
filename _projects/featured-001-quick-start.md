@@ -24,8 +24,8 @@ and created a couple JFR profiles to start up quickly with some examples.
 - database is started as a testcontainer (CockroachDB) directly from the app (to simulation waiting/parking)
 - from time to time the application parks itself, stores and loads data from disk and copy it back to DB on a single thread
 - there are two recordings:
-  - `direct` - JSON is marshalled/unmarshalled directly to/from Java Object
-  - `dom` - JSON si marshalled/unmarshalled to JSON DOM (Jackson's JsonNode), then from DOM to Java Object
+  - `direct` - JSON is serialized/deserialized directly to/from Java Object
+  - `dom` - JSON si serialized/deserialized to JSON DOM (Jackson's JsonNode), then from DOM to Java Object
 
 #### Recording x Profile
 
@@ -52,14 +52,38 @@ docker run -it --network host petrbouda/jeffrey-examples
 
 ![frontpage](/images/blog/start/frontpage.png)
 
-- the picture above contains predefined profiles and a drag-and-drop form to load a new recording
+- For the purpose of this article, we created 2 profiles:
+  - **jeffery-persons-full-direct-serde** - jeffrey-testapp with serde directly from bytes to entity
+  - **jeffery-persons-full-dom-serde** - jeffrey-testapp with serde using JSON DOM
+  - both profiles were created using AsyncProfile (CPU + Alloc) with all other events from JFR settings=profile
+
+- the picture above contains predefined profiles and a drag-and-drop form to load a new recording (it automatically creates a new profile from the recording at this time)
 - choose **jeffery-persons-full-direct-serde** profile 
 
 ## Profile Information
 
+After the profile selection, the very first page contains basic information about the application and the profile.
+Since we have JFR's `settings=profile`, the application emitted all available configuration events.
+
+If your profile does see any of the events above you probably have JFR's `settings=default` or use AsyncProfile without `jfrSync` argument (more information about options for generating recordings will be available in the follow-up blog post)
+
 ![profile-information](/images/blog/start/profile-info.png)
 
-- the profile was generated 
+## Auto Analysis
+
+Follow with the second item on the menu: **Auto Analysis**. There are some predefined rules and thresholds
+that automatically generate recommendations with detailed explanations directly from emitted events.
+
+Be focused on the warnings and always consider whether the warning is relevant for you and can help you to run your application efficiently.
+
+![auto-analysis](/images/blog/start/auto-analysis.png)
+
+## Event Viewer
+
+The next item is **Event Viewer**.
+
+![auto-analysis](/images/blog/start/event-viewer.png)
+
 
 <div class="gallery-box">
   <div class="gallery">
