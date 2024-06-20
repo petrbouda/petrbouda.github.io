@@ -1,6 +1,52 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Jeffrey, The JFR Analyst</title>
+    <meta name='description' content="{{ page.description }}">
+
+    <link rel="icon" href="/images/favicon.png" />
+    <link rel="canonical" href="/">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Jeffrey, The JFR Analyst">
+    <meta name="twitter:creator" content="@jeffrey_analyst" />
+    <meta property="og:url" content="{{ page.url }}" />
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:description" content="{{ page.description }}" />
+    <meta property="og:image" content="https://www.jeffrey-analyst.cafe/images/01.jpg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <script>
+        document.documentElement.setAttribute("light", "");
+        document.documentElement.classList.add('light-mode');
+    </script>
+
+    <style>
+        {% capture include_to_scssify %}
+        {% include main.scss %}
+        {% endcapture %}
+        {{ include_to_scssify | scssify }}
+    </style>
+</head>
+
+<body class="{% if page.url == '/' %}home-page{% endif %}">
+
+{% include header.html %}
+
+<!-- begin content -->
+<main class="content" aria-label="Content">
 
 <div class="container">
 
@@ -30,3 +76,13 @@ layout: default
   </article>
   <!-- end post -->
 </div>
+</main>
+<!-- end content -->
+
+{% include footer.html %}
+
+<script src="{{ site.baseurl }}/js/scripts.js"></script>
+<script src="{{ site.baseurl }}/js/common.js"></script>
+</body>
+
+</html>
