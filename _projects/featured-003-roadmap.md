@@ -41,7 +41,7 @@ featured: true
 
 ### 0.6.0 - Code Quality (Removing TechDebt)
 
-Currently, we haven't any tests to be focused on bringing features to the first version of Jeffrey (to check whether community has any interest to this app)
+We omitted tests to be focused on bringing features to the first major version of Jeffrey (to check whether community has any interest to this app)
 
 Reasons for omitting tests:
 
