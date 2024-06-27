@@ -7,7 +7,7 @@ image: '/images/featured/roadmap.jpg'
 featured: true
 ---
 
-### 0.2.0 - Cloud Deployment
+### 0.2.0 - Simple Cloud Deployment
 
 - [x]  DIR Config Configuration
 - [x]  HTTP Config for Load App
