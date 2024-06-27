@@ -9,18 +9,19 @@ featured: true
 
 ### 0.2.0 - Simple Cloud Deployment
 
-- [x] &nbsp; DIR Config Configuration
+- [x] &nbsp; Configuration of directories for Jeffrey 
 - [x] &nbsp; HTTP Config for Load App
-- [ ] &nbsp; Lambda Matcher for DiffGraph
-- [x] &nbsp; Recording Folder
-- [ ] &nbsp; Cloud Deployment Blog Post
-- [ ] &nbsp; Fix Secondary Info in cards
+- [ ] &nbsp; Special handling of generated Lambdas to stop crippling DiffGraph
+- [x] &nbsp; Page for recordings maintained by Jeffrey
+- [x] &nbsp; Generate a new profile from the recording
+- [ ] &nbsp; "Simple Cloud Deployment" blog post
+- [ ] &nbsp; Add info about secondary profiles to DiffGraph cards
 
 ### 0.3.0 - Performance
 
-- [ ] &nbsp; Pregenerate all static Profile's content
-- [ ] &nbsp; Pregenerate configured flamegraphs
-- [ ] &nbsp; Shared iterating over JFR file
+- [ ] &nbsp; Pre-generate all static profile's content (content for Profile Information, Auto-Analysis, Event Viewer)
+- [ ] &nbsp; Pre-generate content for the main configured flamegraphs and sub-second graphs
+- [ ] &nbsp; Shared iterating over the JFR file (one iteration of JFR file for multiple outputs)
 - [ ] &nbsp; Profile Jeffrey with Jeffrey
 
 ### 0.4.0 - Thread View
