@@ -22,6 +22,7 @@ featured: true
 - [ ] &nbsp; Pre-generate all static profile's content (content for Profile Information, Auto-Analysis, Event Viewer)
 - [ ] &nbsp; Pre-generate content for the main configured flamegraphs and sub-second graphs
 - [ ] &nbsp; Shared iterating over the JFR file (one iteration of JFR file for multiple outputs)
+- [ ] &nbsp; Processing in parallel (e.g. Primary&Secondary recordings DiffGraph)
 - [ ] &nbsp; Profile Jeffrey with Jeffrey
 
 ### 0.4.0 - Thread View
