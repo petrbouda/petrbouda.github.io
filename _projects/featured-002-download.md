@@ -11,7 +11,7 @@ Jeffrey is currently distributed in two artifacts standalone JAR File, or Contai
 
 ### Standalone JAR and Prepared Build
 
-- Java 22 is required to run standalone JAR file
+- Java 21 is required to run standalone JAR file
 
 <a href="https://github.com/petrbouda/jeffrey/releases/latest/download/jeffrey.jar" style="color: blue">https://github.com/petrbouda/jeffrey/releases/latest/download/jeffrey.jar</a>
 
@@ -47,7 +47,7 @@ docker run -it --network host petrbouda/jeffrey-examples
 
 #### Build from sources
 
-- It requires having Java 22 and Node.js 22 installed (Maven plugin uses `npm` and run `vite build`)
+- It requires having Java 21 and Node.js 22 installed (Maven plugin uses `npm` and run `vite build`)
 
 ```
 git clone https://github.com/petrbouda/jeffrey.git && cd jeffrey
@@ -78,7 +78,7 @@ java -jar jeffrey.jar
 
 ### Running for development
 
-- It requires having Java 22 and Node.js 22 installed
+- It requires having Java 21 and Node.js 22 installed
 - Start the Backend in IDE: `service/core/src/main/java/pbouda/jeffrey/Application.java`
 - Start UI
 
