@@ -32,7 +32,7 @@ title: Writing
   <div class="container">
     <div class="row grid">
     {% if site.posts.size > 0 %}
-      {% assign sorted = paginator.posts | reverse %}
+      {% assign sorted = paginator.posts | sort:"order" %}
       {% for post in sorted offset:0 %}
         {% include article.html %}
       {% endfor %}
