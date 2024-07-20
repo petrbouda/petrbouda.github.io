@@ -1,47 +1,12 @@
 ---
+title: Jeffrey App in Examples
+description: Show the main features of Jeffrey
 order: 1
-title: Quick Start with Examples
-#date: 2024-01-16 08:01:35 +0300
-#label: Flamegraphs
-image: '/images/featured/start.jpg'
-featured: true
 ---
-**Greetings, Java Developer!**
 
-My name is Jeffrey, and I'll be your guide today to show you some interesting features of my application. 
-Let's go straight to the point, I don't want to waste your time. It's Profile-time!
+## Let's Get Started with Jeffrey
 
-I'm mainly focused on profiling Java application and JFR recordings. Therefore, I prepared a testing application  
-and created a couple JFR profiles to start up quickly with some examples.
-
-## Initial Information
-
-#### Tested Application
-
-- <a href="https://github.com/petrbouda/jeffrey-testapp" style="color: blue">https://github.com/petrbouda/jeffrey-testapp</a>
-- simple multi-threaded web application for storing and fetching information about persons 
-- the app is full of inefficiencies to have some interesting info in the recording
-- database is started as a testcontainer (CockroachDB) directly from the app (to simulation waiting/parking)
-- from time to time the application parks itself, stores and loads data from disk and copy it back to DB on a single thread
-- there are two recordings:
-  - `direct` - JSON is serialized/deserialized directly to/from Java Object
-  - `dom` - JSON si serialized/deserialized to JSON DOM (Jackson's JsonNode), then from DOM to Java Object
-
-#### Recording x Profile
-
-- `recording` - a concrete generated JFR file
-- `profile` - data under investigation generated from JFR file
-  - currently, there is 1:1 relationship between Recording and Profile 
-  - in the future, the profile can be just a part of the recording, or merged from several recordings 
-
-#### Primary & Secondary Profiles
-
-- `primary` - the main profile selected at the very beginning (the blue one in the header)
-- `secondary` - the profile that is used for differential flamegraphs/sub-second graphs (the grey one in the header)
-
-## Let's Get Started
-
-There are multiple ways to start Jeffrey. However, for this Quick Start, we will use Docker Image with pre-generated 
+There are multiple ways to start Jeffrey. However, for this Quick Start, we will use Docker Image with pre-generated
 recordings <a href="https://hub.docker.com/repository/docker/petrbouda/jeffrey-examples" style="color: blue">https://hub.docker.com/repository/docker/petrbouda/jeffrey-examples</a>
 
 ```
@@ -58,7 +23,7 @@ docker run -it --network host petrbouda/jeffrey-examples
   - both profiles were created using AsyncProfile (CPU + Alloc) with all other events from JFR settings=profile
 
 - the picture above contains predefined profiles and a drag-and-drop form to load a new recording (it automatically creates a new profile from the recording at this time)
-- choose **jeffery-persons-full-direct-serde** profile 
+- choose **jeffery-persons-full-direct-serde** profile
 
 ## Profile's Information
 
@@ -105,7 +70,7 @@ We skipped **Saved Graphs** sections for this moment (we'll get back to it soon)
 
 ### Primary Flamegraphs
 
-In this section, you can notice predefined cards with specific flamegraph configuration. 
+In this section, you can notice predefined cards with specific flamegraph configuration.
 It contains basic information about the event type: total number of samples, total weight (total allocation, total blocked time, ...).
 In the end, we can pick up specific configuration for flamegraph visualization:
 - Thread-mode (grouping stacks using threads)
@@ -116,10 +81,10 @@ In the end, we can pick up specific configuration for flamegraph visualization:
 
 Select **Execution Samples** card and notice some interesting features:
 
-- colored frames with a context window containing additional information 
+- colored frames with a context window containing additional information
 - 2 types of searches, for timeseries and faster only for flamegraph (easily accessible using the context menu)
   - in the picture below, timeseries graph shows JIT samples against the all other samples
-  - it results in a nice visualization of spikes and initial JIT overhead 
+  - it results in a nice visualization of spikes and initial JIT overhead
 - we can notice a thread-mode in the picture below (especially useful for wall-clock profiling using AsyncProfiler)
 
 <div class="gallery-box">
@@ -140,21 +105,21 @@ The main reason for the differential graphs is to notice whether we reduced samp
 
 Select **jeffery-persons-full-dom-serde** profile. We should see some differences in marshalling and unmarshalling entities.
 
-> Differential Graphs are not so easy to interpret. Performance Engineer needs to be focused to significant differences, or needs to know what he's looking for.   
+> Differential Graphs are not so easy to interpret. Performance Engineer needs to be focused to significant differences, or needs to know what he's looking for.
 
-There are multiple ways to implement differential graph internally. Every implementation has strength and weaknesses. 
+There are multiple ways to implement differential graph internally. Every implementation has strength and weaknesses.
 For the precise interpretation, we need to know the internal details.
 
-The points that needs to be taken into account: 
+The points that needs to be taken into account:
 
 - generated code can make 100% difference between profiles
 - one profile can have different number of samples because of different profile's duration, unexpected peak during the recording, ...
 - do we compare exact count of samples/weight, or ration/percentage of frames (to eliminate different profile's duration)
 - different version of libraries or JDK can add an insignificant frame to stacktrace and it results in 100% difference for the rest of the stacktrace
 - recording without _-XX:+DebugNonSafepoints_ can omit some inlined frames and we'll end up with 100% difference again
-- I'll elaborate on this topic in the specific blog post! 
+- I'll elaborate on this topic in the specific blog post!
 
-What we can see in the pictures below: 
+What we can see in the pictures below:
 
 - the timeseries graph with both profiles, the secondary profile is moved to start at the same time as the primary one does
 - **green color** - points to frames that were available in _Secondary Profile_ and removed in _Primary Profile_
@@ -174,7 +139,7 @@ Primary and Differential Sub-Second Graph works very similarly with similar conc
 Differential flamegraphs as a result, therefore I merged the sections into a single topic.
 
 Sub-Second Graphs are represented as a heatmap with seconds on X-axis and millis on Y-axis. This type of visualization
-is suitable for fine-grained tuning, e.g. to correlate spikes in the application with JIT/GC samples. One square represents 
+is suitable for fine-grained tuning, e.g. to correlate spikes in the application with JIT/GC samples. One square represents
 10 millis of the execution and the color is based on a number of samples in the given time period.
 
 Currently, we are able to see just the first second of the application, so the perfect way to tune the starup of the application.
@@ -185,8 +150,8 @@ In the picture above, we can notice following:
 
 - first 1-2 second was application startup
 - the next ~28 seconds was dedicated to the container startup (blocked for downloading the container image/startup) + some spots with JIT and JFR activity
-- for the next a couple of seconds the startup was resumed 
-- then regular processing of requests 
+- for the next a couple of seconds the startup was resumed
+- then regular processing of requests
 
 We can select the interesting time period, and then visualize it using flamegraph or save the flamegraph for the later on.
 

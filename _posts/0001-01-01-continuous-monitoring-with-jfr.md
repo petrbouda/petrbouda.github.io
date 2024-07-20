@@ -1,6 +1,7 @@
 ---
 title: JFR and Continuous Monitoring
 description: Mikael Vidstedt - Continuous Monitoring with JDK Flight Recorder
+order: 5
 #image: '/images/06.jpg'
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Mandatory Literature
 description: All you need to efficiently profile and analyze your profiles
+order: 3
 #image: '/images/06.jpg'
 ---
 

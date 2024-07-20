@@ -16,8 +16,8 @@
 
     <div class="row">
     {% if site.posts.size > 0 %}
-      {% assign sorted = site.posts | reverse %}
-      {% for post in sorted offset:0 limit:3 %}
+      {% assign sorted = site.posts | sort:"order" %}
+      {% for post in sorted offset:0 limit:6 %}
         {% include article.html %}
       {% endfor %}
     {% endif %}

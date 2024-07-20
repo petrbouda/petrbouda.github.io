@@ -31,8 +31,8 @@
 
             <div class="splide__track animate">
               <div class="splide__list" style="padding-top: 20px">
-                {% assign sorted = site.projects | reverse %}
-                {% for project in site.projects %}
+                {% assign sorted = site.projects | sort:"order" %}
+                {% for project in sorted %}
                 {% if project.featured == true %}
                 <article class="project col-4 col-d-6 col-t-12 splide__slide">
                   <div class="project__content" style="padding: 20px">
