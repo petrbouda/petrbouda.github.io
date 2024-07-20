@@ -43,24 +43,27 @@
             </div>
         </div>
         <div class="container">
-            <div class="row" style="margin-top: 50px; margin-bottom: 50px">
-                <div class="col col-3 col-d-0 col-t-0">
-                </div>
-                <div class="col col-3 col-d-6 col-t-12">
-                    <div class="nav-button">
-                        <a href="https://github.com/petrbouda/jeffrey/releases/latest/download/jeffrey.jar"
-                           class="button cta-button">Download Jeffrey App</a>
-                    </div>
-                </div>
-                <div class="col col-3 col-d-6 col-t-12">
-                    <div class="nav-button">
-                        <a href="https://github.com/petrbouda/jeffrey/releases/latest/download/jeffrey-cli.jar"
-                           class="button cta-button">Download Jeffrey CLI</a>
-                    </div>
-                </div>
-            </div>
+            <ul style="margin-top: 50px; list-style-type: none; text-align: center;">
+                <li class="li-item">
+                    <a href="https://github.com/petrbouda/jeffrey/releases/latest/download/jeffrey.jar"
+                       class="button cta-button">Download Jeffrey App</a>
+                </li>
+                <li class="li-item">
+                    <a href="https://github.com/petrbouda/jeffrey/releases/latest/download/jeffrey-cli.jar"
+                       class="button cta-button">Download Jeffrey CLI</a>
+                </li>
+            </ul>
         </div>
     </div>
 </section>
+
+<style>
+    .li-item {
+        display: inline-block;
+        text-align: center;
+        width: 250px;
+        margin: 5px;
+    }
+</style>
 <!-- end hero -->
 {% endif %}
