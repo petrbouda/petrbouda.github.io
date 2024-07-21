@@ -160,6 +160,8 @@ java -jar jeffrey-cli.jar flame-diff jeffrey-persons-full-direct-serde.jfr jeffr
 Generated: <path>/jeffrey-recordings/jeffrey-persons-full-direct-serde.html
 ```
 
+Below we can notice 100% added and removed parts of the stacktraces. Moreover, the zoomed area contain an synthetic Lambda Frame that replaces some kind of generated methods (most likely called by Method Handles). This kind of generated code would result with 100% difference between the two versions (compilations) of the same application and calling lambdas very often end up with generated synthetic methods. This is a way to step over the generated frame and don't cripple the rest of the graph.
+
 <div class="gallery-box">
   <div class="gallery">
     <img src="/images/blog/start-cli/flame-diff-1.png" loading="lazy" alt="Project">
