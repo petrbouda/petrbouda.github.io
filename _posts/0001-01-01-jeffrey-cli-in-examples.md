@@ -115,12 +115,12 @@ Generated: <path>/jeffrey-recordings/jeffrey-persons-full-direct-serde.html
 #### Searching in Timeseries and Flamegraph
 
 As mentioned before, it's not possible to use zooming and searching directly from the generated graph because of its static nature.
-However, at least we can generate the graph with a **search-pattern** option to break down the Timeseries graph into two series:
+However, at least we can generate the graph with a **search-pattern** option to split the Timeseries graph into two series:
 
 - samples that contain the search-pattern
 - the rest of the samples that are not matched
 
-We search _Compile_ pattern in the samples to point out the compilation overhead over the time of the recording.
+We search for _Compile_ pattern in the samples to point out the compilation overhead over the time of the recording.
 
 ```
 $ java -jar jeffrey-cli.jar flame --search-pattern=Compile jeffrey-persons-full-direct-serde.jfr
