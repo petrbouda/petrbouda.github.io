@@ -89,7 +89,7 @@ Another example below uses a specific **event-type** with a **weight** option. S
 <a href="https://github.com/async-profiler/async-profiler" style="color: blue">Async-Profiler</a> with **alloc** option, then we
 need to use _jdk.ObjectAllocationInNewTLAB_ as the event-type to get the appropriate result.
 
-**weight** option is useful in this case because we want to be focused more on the path generated more bytes instead of more samples. 
+**weight** option is useful in this case because we want to be focused more on the path generating more bytes instead of more samples. 
 Otherwise, we could be misled by a lot of samples with non-significant allocated amount of memory that would hide 
 interesting spots with fewer samples but huge allocated chunks. 
 
