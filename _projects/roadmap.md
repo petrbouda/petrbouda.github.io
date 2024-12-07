@@ -25,22 +25,22 @@ order: 3
 - [ ] &nbsp; "Simple Cloud Deployment" blog post
 - [x] &nbsp; Add info about secondary profiles to DiffGraph cards
 
-### 0.4 - Performance
+### 0.4 - Moving to the Cloud and Progress with Guardian
 
-- [ ] &nbsp; Pre-generate all static profile's content (content for Profile Information, Auto-Analysis, Event Viewer)
+- [ ] &nbsp; Find new hosting/deployments for Jeffrey (new clients) - Real-world workloads
+- [ ] &nbsp; Next steps with Guardian
+- [ ] &nbsp; Configurable Guardian
+- [ ] &nbsp; Extensibility of Guardian (e.g. user-defined rules, easier way to add new rules)
+
+### 0.x - Performance
+
+- [x] &nbsp; Pre-generate all static profile's content (content for Profile Information, Auto-Analysis, Event Viewer)
 - [ ] &nbsp; Pre-generate content for the main configured flamegraphs and sub-second graphs
 - [ ] &nbsp; Shared iterating over the JFR file (one iteration of JFR file for multiple outputs)
-- [ ] &nbsp; Processing in parallel (e.g. Primary&Secondary recordings DiffGraph)
-- [ ] &nbsp; Profile Jeffrey with Jeffrey
+- [x] &nbsp; Processing in parallel (e.g. Primary&Secondary recordings DiffGraph)
+- [x] &nbsp; Profile Jeffrey with Jeffrey
 
-### 0.5 - Thread View
-
-- [ ] &nbsp; Threads with timelines and given states
-- [ ] &nbsp; Context window - stacktrace/flamegraph for BLOCKED state 
-- [ ] &nbsp; Context window - generate a flamegraph for a thread RUNNABLE state for the given period (modal window)
-- [ ] &nbsp; Filtering/Grouping threads
-
-### 0.6 - Manipulating with Recordings
+### 0.x - Manipulating with Recordings
 
 - [ ] &nbsp; Upload recordings to folders
 - [ ] &nbsp; Merge recordings
@@ -49,7 +49,7 @@ order: 3
 - [ ] &nbsp; Generate a new recording by removing specific events from the old one
 - [ ] &nbsp; Generate a new recording from a specific time range of the old one
 
-### 0.7 - Code Quality (Removing TechDebt)
+### 0.x - Code Quality (Removing TechDebt)
 
 We omitted tests to be focused on bringing features to the first major version of Jeffrey (to check whether community has any interest to this app)
 
