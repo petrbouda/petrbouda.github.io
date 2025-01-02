@@ -1,5 +1,5 @@
 ---
-title: 0.7 Release Announcement
+title: 0.4 Release Announcement
 description: Let's Get Started with Jeffrey 0.4 release
 order: 7
 ---
