@@ -1,0 +1,53 @@
+import{D as l}from"./DocsCallout-CpssTsfm.js";import{D as i}from"./DocsCodeBlock-CxxWB0wX.js";import{D as m}from"./DocsNavFooter-Bpu0MOP3.js";import{D as u}from"./DocsPageHeader-B63Tqr43.js";import{u as f}from"./useDocHeadings-C7CxDpVE.js";import{d as v,k as g,a as c,g as a,b as t,e as r,j as o,w as n,h as b,o as h}from"./index-CXhcnhmS.js";import{_ as y}from"./_plugin-vue_export-helper-DlAUqK2U.js";const j={class:"docs-article"},k={class:"docs-content"},x=`<plugin>
+    <groupId>com.google.cloud.tools</groupId>
+    <artifactId>jib-maven-plugin</artifactId>
+    <version>\${jib.version}</version>
+    <dependencies>
+        <dependency>
+            <groupId>cafe.jeffrey-analyst</groupId>
+            <artifactId>jeffrey-jib-maven</artifactId>
+            <version>\${jeffrey-jib.version}</version>
+        </dependency>
+    </dependencies>
+    <configuration>
+        <from>
+            <image>eclipse-temurin:25-jre</image>
+        </from>
+        <container>
+            <ports>
+                <port>8080</port>
+            </ports>
+        </container>
+        <pluginExtensions>
+            <pluginExtension>
+                <implementation>cafe.jeffrey.jib.maven.JeffreyJibMavenExtension</implementation>
+            </pluginExtension>
+        </pluginExtensions>
+    </configuration>
+</plugin>`,I=`<properties>
+    <springboot.version>4.0.6</springboot.version>
+    <jib.version>3.5.1</jib.version>
+    <jeffrey-jib.version>0.0.1-b3</jeffrey-jib.version>
+</properties>`,E=`<plugin>
+    <groupId>com.google.cloud.tools</groupId>
+    <artifactId>jib-maven-plugin</artifactId>
+    <configuration>
+        <to>
+            <image>petrbouda/jeffrey-testapp-server</image>
+        </to>
+        <container>
+            <mainClass>\${mainClass}</mainClass>
+        </container>
+    </configuration>
+</plugin>`,J=`<plugin>
+    <groupId>com.google.cloud.tools</groupId>
+    <artifactId>jib-maven-plugin</artifactId>
+    <configuration>
+        <to>
+            <image>petrbouda/jeffrey-testapp-client</image>
+        </to>
+        <container>
+            <mainClass>\${mainClass}</mainClass>
+        </container>
+    </configuration>
+</plugin>`,w=v({__name:"DeploymentJeffreyJibPage",setup(C){const{setHeadings:s}=f(),p=[{id:"what-it-does",text:"What the Extension Does",level:2},{id:"parent-pom",text:"Parent pom.xml",level:2},{id:"module-pom",text:"Per-Module Override",level:2},{id:"build-commands",text:"Build Commands",level:2},{id:"no-baked-binaries",text:"No Agent or Profiler in the Image",level:2}];return g(()=>{s(p)}),(B,e)=>{const d=b("router-link");return h(),c("article",j,[a(u,{title:"Jeffrey JIB Extension",icon:"bi bi-box-seam"}),t("div",k,[e[20]||(e[20]=r('<p data-v-e936e879> The <strong data-v-e936e879>Jeffrey JIB extension</strong> wraps the standard <a href="https://github.com/GoogleContainerTools/jib" target="_blank" rel="noopener" data-v-e936e879>jib-maven-plugin</a> and modifies the image&#39;s entrypoint at build time. The result: a Spring Boot image that, when launched in a pod with <code data-v-e936e879>JEFFREY_ENABLED=true</code> and a populated <code data-v-e936e879>JEFFREY_HOME</code>, automatically runs <code data-v-e936e879>jeffrey-cli init</code> before the JVM starts and boots with the right <code data-v-e936e879>-javaagent</code> + async-profiler flags. There is no Dockerfile, no shell script, and no agent or profiler binary baked into the image. </p><h2 id="what-it-does" data-v-e936e879>What the Extension Does</h2><p data-v-e936e879>At image-build time, the extension modifies the JIB <code data-v-e936e879>ContainerBuildPlan</code>:</p><div class="feature-list" data-v-e936e879><div class="feature-item" data-v-e936e879><i class="bi bi-check-circle-fill" data-v-e936e879></i><div data-v-e936e879>Installs a small shell wrapper at <code data-v-e936e879>/usr/local/bin/jeffrey-entrypoint</code> as a new image layer.</div></div><div class="feature-item" data-v-e936e879><i class="bi bi-check-circle-fill" data-v-e936e879></i><div data-v-e936e879>Replaces the image <code data-v-e936e879>ENTRYPOINT</code> with the wrapper.</div></div><div class="feature-item" data-v-e936e879><i class="bi bi-check-circle-fill" data-v-e936e879></i><div data-v-e936e879>Moves JIB&#39;s auto-derived <code data-v-e936e879>java -cp @/app/jib-classpath-file &lt;MainClass&gt;</code> into <code data-v-e936e879>CMD</code>.</div></div><div class="feature-item" data-v-e936e879><i class="bi bi-check-circle-fill" data-v-e936e879></i><div data-v-e936e879>Preserves JIB&#39;s main-class detection, classpath-file assembly, <code data-v-e936e879>jvmFlags</code>, base image, and target architecture.</div></div></div>',4)),t("p",null,[e[1]||(e[1]=o(" At container start, the wrapper runs ",-1)),e[2]||(e[2]=t("code",null,"jeffrey-cli init",-1)),e[3]||(e[3]=o(" — resolved from ",-1)),e[4]||(e[4]=t("code",null,"${JEFFREY_HOME}/libs/current/jeffrey-cli-<arch>",-1)),e[5]||(e[5]=o(" on the shared volume populated by Jeffrey Server's ",-1)),a(d,{to:"/docs/server/deployment/shared-volume"},{default:n(()=>[...e[0]||(e[0]=[o("copy-libs",-1)])]),_:1}),e[6]||(e[6]=o(" feature — and then ",-1)),e[7]||(e[7]=t("code",null,"exec",-1)),e[8]||(e[8]=o("s the original JIB command with the profiler-agent flags merged in. If the shared-volume root is not configured at runtime (neither ",-1)),e[9]||(e[9]=t("code",null,"JEFFREY_HOME",-1)),e[10]||(e[10]=o(" nor ",-1)),e[11]||(e[11]=t("code",null,"JEFFREY_CLI_PATH",-1)),e[12]||(e[12]=o(' is set), the wrapper logs a warning and skips init entirely — useful for "build once, ship to dev/prod with profiling, ship to CI without". ',-1))]),e[21]||(e[21]=t("h2",{id:"parent-pom"},"Parent pom.xml",-1)),e[22]||(e[22]=t("p",null,[o(" The testapp's parent "),t("code",null,"pom.xml"),o(" places the extension inside the "),t("code",null,"jib-maven-plugin"),o("'s "),t("code",null,"<dependencies>"),o(" block (so JIB loads it on the plugin classpath) and registers it via "),t("code",null,"<pluginExtensions>"),o(": ")],-1)),a(i,{language:"xml",code:x}),e[23]||(e[23]=t("p",null,[o(" The version properties live in the parent's "),t("code",null,"<properties>"),o(" block (excerpted from "),t("a",{href:"https://github.com/petrbouda/jeffrey-testapp/blob/main/pom.xml",target:"_blank",rel:"noopener"}," jeffrey-testapp/pom.xml "),o("): ")],-1)),a(i,{language:"xml",code:I}),a(l,{type:"info"},{default:n(()=>[...e[13]||(e[13]=[t("strong",null,"Coordinates.",-1),o(" The extension lives at ",-1),t("code",null,"cafe.jeffrey-analyst:jeffrey-jib-maven",-1),o(", currently version ",-1),t("code",null,"0.0.1-b3",-1),o(". JIB itself stays at the standard ",-1),t("code",null,"com.google.cloud.tools:jib-maven-plugin:3.5.1",-1),o(" — no fork, no patched plugin. ",-1)])]),_:1}),e[24]||(e[24]=t("h2",{id:"module-pom"},"Per-Module Override",-1)),e[25]||(e[25]=t("p",null,[o(" Each module pins its own target image and main class but inherits everything else — base image, port, the extension wiring — from the parent. From "),t("a",{href:"https://github.com/petrbouda/jeffrey-testapp/blob/main/server/pom.xml",target:"_blank",rel:"noopener"}," server/pom.xml "),o(": ")],-1)),a(i,{language:"xml",code:E}),e[26]||(e[26]=t("p",null,[o("And the matching block in "),t("a",{href:"https://github.com/petrbouda/jeffrey-testapp/blob/main/client/pom.xml",target:"_blank",rel:"noopener"}," client/pom.xml "),o(": ")],-1)),a(i,{language:"xml",code:J}),e[27]||(e[27]=r('<p data-v-e936e879> The <code data-v-e936e879>${mainClass}</code> placeholder is the module&#39;s own <code data-v-e936e879>&lt;properties&gt;</code> entry — <code data-v-e936e879>jeffrey.testapp.server.ServerApplication</code> for the server and <code data-v-e936e879>jeffrey.testapp.client.ClientApplication</code> for the client. </p><h2 id="build-commands" data-v-e936e879>Build Commands</h2><p data-v-e936e879> Two flavours, depending on where the image needs to land. Both run from the parent directory and emit one image per Maven module. </p><h3 data-v-e936e879>Local Docker daemon (OrbStack / minikube / Docker Desktop)</h3>',4)),a(i,{language:"bash",code:"mvn clean package jib:dockerBuild"}),e[28]||(e[28]=t("p",null,[o(" Writes the image directly into the local Docker daemon — no registry round-trip. Pair with a cluster that mounts the host daemon (OrbStack does this automatically; minikube/kind need "),t("code",null,"minikube image load …"),o(" or an in-cluster registry). ")],-1)),e[29]||(e[29]=t("h3",null,"Container registry",-1)),a(i,{language:"bash",code:"mvn clean package jib:build"}),e[30]||(e[30]=r('<p data-v-e936e879> Pushes to the registry referenced by the module&#39;s <code data-v-e936e879>&lt;to&gt;&lt;image&gt;</code> coordinate (<code data-v-e936e879>petrbouda/jeffrey-testapp-server</code> → <code data-v-e936e879>docker.io/petrbouda/jeffrey-testapp-server:latest</code> by default). Authentication uses your Docker config (<code data-v-e936e879>~/.docker/config.json</code>) or the <code data-v-e936e879>JIB_REGISTRY_USER</code> / <code data-v-e936e879>JIB_REGISTRY_PASS</code> env vars. </p><h2 id="no-baked-binaries" data-v-e936e879>No Agent or Profiler in the Image</h2><p data-v-e936e879> A deliberate property of the testapp setup: <strong data-v-e936e879>the application image contains only the entrypoint wrapper</strong>. The CLI binary, agent JAR, and async-profiler library are not baked into the image — they are delivered to every monitored pod at runtime via the shared <code data-v-e936e879>jeffrey-pvc</code>, populated by Jeffrey Server&#39;s <code data-v-e936e879>copy-libs</code> feature. </p>',3)),a(l,{type:"tip"},{default:n(()=>[e[15]||(e[15]=t("strong",null,"Why bother?",-1)),e[16]||(e[16]=o(" One Jeffrey Server upgrade publishes a new CLI bundle for every monitored pod in the namespace — you never rebuild your application image to pick up an agent fix. The trade-off is a runtime dependency on the shared volume (and on Jeffrey Server having finished publishing into it before the application starts), which the testapp Helm chart handles with an init container that polls Jeffrey Server's ",-1)),e[17]||(e[17]=t("code",null,"/actuator/health/readiness",-1)),e[18]||(e[18]=o(". See ",-1)),a(d,{to:"/docs/server/deployment/helm-chart"},{default:n(()=>[...e[14]||(e[14]=[o("Helm Chart",-1)])]),_:1}),e[19]||(e[19]=o(" for the wiring. ",-1))]),_:1})]),a(m)])}}}),M=y(w,[["__scopeId","data-v-e936e879"]]);export{M as default};
