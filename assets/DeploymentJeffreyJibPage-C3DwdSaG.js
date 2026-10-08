@@ -1,0 +1,53 @@
+import{D as d}from"./DocsCallout-DDHjlUx0.js";import{D as i}from"./DocsCodeBlock-DVdz4Zn3.js";import{D as f}from"./DocsNavFooter-BBN3nLbJ.js";import{D as u}from"./DocsPageHeader-GqgBNNc6.js";import{u as m}from"./useDocHeadings-BRrH1Hgl.js";import{d as b,k as c,c as g,e as a,a as t,j as o,w as n,b as r,i as v,o as h}from"./index-BV3JCaX2.js";import{_ as y}from"./_plugin-vue_export-helper-DlAUqK2U.js";const j={class:"docs-article"},x={class:"docs-content"},k=`<plugin>
+    <groupId>com.google.cloud.tools</groupId>
+    <artifactId>jib-maven-plugin</artifactId>
+    <version>\${jib.version}</version>
+    <dependencies>
+        <dependency>
+            <groupId>cafe.jeffrey-analyst</groupId>
+            <artifactId>jeffrey-jib-maven-jar</artifactId>
+            <version>\${jeffrey-jib.version}</version>
+        </dependency>
+    </dependencies>
+    <configuration>
+        <from>
+            <image>eclipse-temurin:25-jre</image>
+        </from>
+        <container>
+            <ports>
+                <port>8080</port>
+            </ports>
+        </container>
+        <pluginExtensions>
+            <pluginExtension>
+                <implementation>cafe.jeffrey.jib.maven.JeffreyJibMavenExtension</implementation>
+            </pluginExtension>
+        </pluginExtensions>
+    </configuration>
+</plugin>`,w=`<properties>
+    <springboot.version>4.0.6</springboot.version>
+    <jib.version>3.5.2</jib.version>
+    <jeffrey-jib.version>0.14.0</jeffrey-jib.version>
+</properties>`,I=`<plugin>
+    <groupId>com.google.cloud.tools</groupId>
+    <artifactId>jib-maven-plugin</artifactId>
+    <configuration>
+        <to>
+            <image>petrbouda/jeffrey-testapp-server</image>
+        </to>
+        <container>
+            <mainClass>\${mainClass}</mainClass>
+        </container>
+    </configuration>
+</plugin>`,E=`<plugin>
+    <groupId>com.google.cloud.tools</groupId>
+    <artifactId>jib-maven-plugin</artifactId>
+    <configuration>
+        <to>
+            <image>petrbouda/jeffrey-testapp-client</image>
+        </to>
+        <container>
+            <mainClass>\${mainClass}</mainClass>
+        </container>
+    </configuration>
+</plugin>`,C=b({__name:"DeploymentJeffreyJibPage",setup(J){const{setHeadings:s}=m(),l=[{id:"what-it-does",text:"What the Extension Does",level:2},{id:"parent-pom",text:"Parent pom.xml",level:2},{id:"module-pom",text:"Per-Module Override",level:2},{id:"build-commands",text:"Build Commands",level:2},{id:"self-contained-image",text:"A Self-Contained Image",level:2}];return c(()=>{s(l)}),(D,e)=>{const p=v("router-link");return h(),g("article",j,[a(u,{title:"Jeffrey JIB Extension",icon:"bi bi-box-seam"}),t("div",x,[t("p",null,[e[1]||(e[1]=o(" The ",-1)),e[2]||(e[2]=t("strong",null,"Jeffrey JIB extension",-1)),e[3]||(e[3]=o(" wraps the standard ",-1)),e[4]||(e[4]=t("a",{href:"https://github.com/GoogleContainerTools/jib",target:"_blank",rel:"noopener"},"jib-maven-plugin",-1)),e[5]||(e[5]=o(" and modifies the image's entrypoint at build time. The result: a Spring Boot image that, when launched in a pod with ",-1)),e[6]||(e[6]=t("code",null,"JEFFREY_ENABLED=true",-1)),e[7]||(e[7]=o(" and a populated ",-1)),e[8]||(e[8]=t("code",null,"JEFFREY_HOME",-1)),e[9]||(e[9]=o(", automatically runs ",-1)),e[10]||(e[10]=t("code",null,"provisioner init",-1)),e[11]||(e[11]=o(" before the JVM starts and boots with the right async-profiler flags, the ",-1)),e[12]||(e[12]=t("code",null,"-Djeffrey.heartbeat.dir",-1)),e[13]||(e[13]=o(" property and the ",-1)),a(p,{to:"/docs/agent/jeffrey-agent"},{default:n(()=>[...e[0]||(e[0]=[o("Jeffrey Agent",-1)])]),_:1}),e[14]||(e[14]=o(" that reports liveness. There is no Dockerfile and no shell script to maintain; the provisioner and async-profiler are installed by the extension under ",-1)),e[15]||(e[15]=t("code",null,"/opt/jeffrey",-1)),e[16]||(e[16]=o(". ",-1))]),e[19]||(e[19]=r('<h2 id="what-it-does" data-v-f6d50b20>What the Extension Does</h2><p data-v-f6d50b20>At image-build time, the extension modifies the JIB <code data-v-f6d50b20>ContainerBuildPlan</code>:</p><div class="feature-list" data-v-f6d50b20><div class="feature-item" data-v-f6d50b20><i class="bi bi-check-circle-fill" data-v-f6d50b20></i><div data-v-f6d50b20>Installs a small shell wrapper at <code data-v-f6d50b20>/usr/local/bin/jeffrey-entrypoint</code> as a new image layer.</div></div><div class="feature-item" data-v-f6d50b20><i class="bi bi-check-circle-fill" data-v-f6d50b20></i><div data-v-f6d50b20>Replaces the image <code data-v-f6d50b20>ENTRYPOINT</code> with the wrapper.</div></div><div class="feature-item" data-v-f6d50b20><i class="bi bi-check-circle-fill" data-v-f6d50b20></i><div data-v-f6d50b20>Moves JIB&#39;s auto-derived <code data-v-f6d50b20>java -cp @/app/jib-classpath-file &lt;MainClass&gt;</code> into <code data-v-f6d50b20>CMD</code>.</div></div><div class="feature-item" data-v-f6d50b20><i class="bi bi-check-circle-fill" data-v-f6d50b20></i><div data-v-f6d50b20>Preserves JIB&#39;s main-class detection, classpath-file assembly, <code data-v-f6d50b20>jvmFlags</code>, base image, and target architecture.</div></div></div><p data-v-f6d50b20> At container start, the wrapper runs <code data-v-f6d50b20>provisioner init</code> from <code data-v-f6d50b20>/opt/jeffrey</code>, where the extension installed it at build time, and then <code data-v-f6d50b20>exec</code>s the original JIB command with the profiler-agent flags merged in. Nothing is downloaded or waited for. Set <code data-v-f6d50b20>JEFFREY_ENABLED=false</code> to skip profiling entirely — useful for &quot;build once, ship to dev/prod with profiling, ship to CI without&quot;. </p><h2 id="parent-pom" data-v-f6d50b20>Parent pom.xml</h2><p data-v-f6d50b20> The testapp&#39;s parent <code data-v-f6d50b20>pom.xml</code> places the extension inside the <code data-v-f6d50b20>jib-maven-plugin</code>&#39;s <code data-v-f6d50b20>&lt;dependencies&gt;</code> block (so JIB loads it on the plugin classpath) and registers it via <code data-v-f6d50b20>&lt;pluginExtensions&gt;</code>: </p>',6)),a(i,{language:"xml",code:k}),e[20]||(e[20]=t("p",null,[o(" The version properties live in the parent's "),t("code",null,"<properties>"),o(" block (excerpted from "),t("a",{href:"https://github.com/petrbouda/jeffrey-testapp/blob/main/pom.xml",target:"_blank",rel:"noopener"}," jeffrey-testapp/pom.xml "),o("): ")],-1)),a(i,{language:"xml",code:w}),a(d,{type:"info"},{default:n(()=>[...e[17]||(e[17]=[t("strong",null,"Coordinates.",-1),o(" The dependency is a ",-1),t("em",null,"flavour",-1),o(" of the extension: ",-1),t("code",null,"cafe.jeffrey-analyst:jeffrey-jib-maven-jar",-1),o(" carries the architecture-neutral provisioner jar, ",-1),t("code",null,"jeffrey-jib-maven-native",-1),o(" the GraalVM binary. Either brings the extension and its payload in one coordinate, pinned above as ",-1),t("code",null,"jeffrey-jib.version",-1),o(", so nothing else has to be configured. JIB itself stays at the standard ",-1),t("code",null,"com.google.cloud.tools:jib-maven-plugin:3.5.2",-1),o(" — no fork, no patched plugin. ",-1)])]),_:1}),e[21]||(e[21]=t("h2",{id:"module-pom"},"Per-Module Override",-1)),e[22]||(e[22]=t("p",null,[o(" Each module pins its own target image and main class but inherits everything else — base image, port, the extension wiring — from the parent. From "),t("a",{href:"https://github.com/petrbouda/jeffrey-testapp/blob/main/server/pom.xml",target:"_blank",rel:"noopener"}," server/pom.xml "),o(": ")],-1)),a(i,{language:"xml",code:I}),e[23]||(e[23]=t("p",null,[o("And the matching block in "),t("a",{href:"https://github.com/petrbouda/jeffrey-testapp/blob/main/client/pom.xml",target:"_blank",rel:"noopener"}," client/pom.xml "),o(": ")],-1)),a(i,{language:"xml",code:E}),e[24]||(e[24]=r('<p data-v-f6d50b20> The <code data-v-f6d50b20>${mainClass}</code> placeholder is the module&#39;s own <code data-v-f6d50b20>&lt;properties&gt;</code> entry — <code data-v-f6d50b20>jeffrey.testapp.server.HubApplication</code> for the server and <code data-v-f6d50b20>jeffrey.testapp.client.ClientApplication</code> for the client. </p><h2 id="build-commands" data-v-f6d50b20>Build Commands</h2><p data-v-f6d50b20> Two flavours, depending on where the image needs to land. Both run from the parent directory and emit one image per Maven module. </p><h3 data-v-f6d50b20>Local Docker daemon (OrbStack / minikube / Docker Desktop)</h3>',4)),a(i,{language:"bash",code:"mvn clean package jib:dockerBuild"}),e[25]||(e[25]=t("p",null,[o(" Writes the image directly into the local Docker daemon — no registry round-trip. Pair with a cluster that mounts the host daemon (OrbStack does this automatically; minikube/kind need "),t("code",null,"minikube image load …"),o(" or an in-cluster registry). ")],-1)),e[26]||(e[26]=t("h3",null,"Container registry",-1)),a(i,{language:"bash",code:"mvn clean package jib:build"}),e[27]||(e[27]=r('<p data-v-f6d50b20> Pushes to the registry referenced by the module&#39;s <code data-v-f6d50b20>&lt;to&gt;&lt;image&gt;</code> coordinate (<code data-v-f6d50b20>petrbouda/jeffrey-testapp-server</code> → <code data-v-f6d50b20>docker.io/petrbouda/jeffrey-testapp-server:latest</code> by default). Authentication uses your Docker config (<code data-v-f6d50b20>~/.docker/config.json</code>) or the <code data-v-f6d50b20>JIB_REGISTRY_USER</code> / <code data-v-f6d50b20>JIB_REGISTRY_PASS</code> env vars. </p><h2 id="self-contained-image" data-v-f6d50b20>A Self-Contained Image</h2><p data-v-f6d50b20> The extension bakes everything the image needs to profile itself: the entrypoint wrapper at <code data-v-f6d50b20>/usr/local/bin/jeffrey-entrypoint</code>, and the provisioner and async-profiler under <code data-v-f6d50b20>/opt/jeffrey</code>. The payload arrives with the flavour you declared, like any other plugin dependency, and the build log prints which Jeffrey release and async-profiler version that jeffrey-jib release bundles. </p>',3)),a(d,{type:"tip"},{default:n(()=>[...e[18]||(e[18]=[t("strong",null,"Why bother?",-1),o(" The shared volume goes back to being just the recording handoff. A pod no longer has to wait for Jeffrey Hub to publish binaries before it can start profiling, which removes the startup race that used to leave a pod running unprofiled until someone restarted it. The cost is that a provisioner fix now arrives with an image rebuild rather than a Hub upgrade. An image whose base already ships async-profiler can keep it by setting ",-1),t("code",null,"profilerPath",-1),o(", which skips that payload entirely. ",-1)])]),_:1})]),a(f)])}}}),R=y(C,[["__scopeId","data-v-f6d50b20"]]);export{R as default};
